@@ -9,7 +9,7 @@
 title: Test Jekyll
 email: lee.elenbaas@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-baseurl: "test-jekyll/" # the subpath of your site, e.g. /blog
+baseurl: "/test-jekyll" # the subpath of your site, e.g. /blog
 url: "http://lee-elenbaas.github.io/test-jekyll/" # the base hostname & protocol for your site
 author: "Lee Elenbaas"
 
