@@ -1,9 +1,9 @@
 ---
 layout: post
-category: Poem
+category: poem
 title: "Sitting in the toddler car"
 tagline:
-tags : ["Description"]
+tags : ["description"]
 published: true
 author: Lee Elenbaas
 ---
