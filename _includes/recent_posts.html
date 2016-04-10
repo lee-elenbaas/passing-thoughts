@@ -1,0 +1,13 @@
+<!-- Recents post -->
+<div class="well">
+  <h4>Recent posts</h4>
+    <ul class="posts" span="recent">
+{% for post in site.posts limit:5 %}
+ <li>
+   <span>{{ post.date | date_to_string }}</span>
+   <a href="{{ site.baseurl }}{{ post.url }}">
+   {{ post.title }}</a>
+ </li>
+{% endfor %}
+</ul>
+</div>
