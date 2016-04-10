@@ -54,7 +54,7 @@
 								{% assign cat_name = cat | first %}
 								{% assign cat_size = cat | last | size %}
 								{% assign cat_slug = cat_name | slugify  %}
-									<a class="bold" href="/category/{{cat_slug | prepend: site.baseurl}}">
+									<a class="bold" href="{{ site.baseurl }}/category/{{ cat_slug }}">
 										{{cat_name}} ({{cat_size}})
 									</a>
                         </div>
@@ -73,7 +73,7 @@
 							{% for post in site.posts limit:5 %}
 							   <li>
 								   <span>{{ post.date | date_to_string }}</span>
-								   <a href="{{ BASE_PATH }}{{ post.url }}">
+								   <a href="{{ site.baseurl }}{{ post.url }}">
 								   {{ post.title }}</a>
 							   </li>
 							{% endfor %}
