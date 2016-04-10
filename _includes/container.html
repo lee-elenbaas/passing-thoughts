@@ -53,7 +53,7 @@
 						{% if paginator.page == 1 %}
 						  <li><span class="active">1</span></li>
 						{% else %}
-						  <li><a href="/">1</a></li>
+						  <li><a href="{{ site.baseurl }}/">1</a></li>
 						{% endif %}
 
 						{% for count in (2..paginator.total_pages) %}
