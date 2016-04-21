@@ -21,3 +21,5 @@ Here are the 10 commandments:
 * if touching it is a long and hard refactor, think long and hard before jumping into it. 
 
 * if the change is not covered by tests you already plan on doing. Consider the test workload addition. Automatic tests coverage is great, if you are certain it cover the necesary scenarios. 
+
+If you are already in the code, and the added workload is ok, then go and refactor like crazy. 
