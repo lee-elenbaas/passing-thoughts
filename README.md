@@ -1,4 +1,4 @@
-# Passing thoughts blog 
+# [Passing thoughts](passing-thoughts.elenbaas.org.il) blog 
 
 is a blog for publishing anything that goes through my mind
 
