@@ -1,0 +1,11 @@
+---
+layout: categories_list
+cat_name: Blog
+---
+
+{% for post in site.categories.blog %}
+
+  {% include catandtag.html %}
+
+{% endfor %}
+

@@ -7,6 +7,8 @@ tags : ["description"]
 published: true
 author: Lee Elenbaas
 ---
+# Sitting in the toddler car
+
 Sitting in the toddler car
 
 The one that accepts coins
@@ -24,6 +26,8 @@ Avoiding reality
 ... just for a few more seconds
 
 ---
+
+# יושב במכונית הפעוטות
 
 יושב במכונית הפעוטות
 

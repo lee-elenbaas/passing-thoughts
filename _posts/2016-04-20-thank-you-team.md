@@ -1,9 +1,9 @@
 ---
 layout: post 
-category: 
+category: seeds 
 title: "Thank you team"
 tagline: 
-tags : [] 
+tags : ["career"] 
 published: false
 ---
 

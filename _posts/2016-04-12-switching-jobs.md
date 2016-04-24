@@ -1,9 +1,9 @@
 ---
 layout: post
-category: career
+category: blog
 title: "Switching jobs"
 tagline:
-tags : []
+tags : ["career"]
 published: true
 author: Lee Elenbaas
 ---

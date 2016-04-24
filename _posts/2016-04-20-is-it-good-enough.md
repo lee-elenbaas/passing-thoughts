@@ -1,6 +1,6 @@
 ---
 layout: post 
-category: 
+category: blog
 title: "Is it good enough? "
 tagline: 
 tags : [] 

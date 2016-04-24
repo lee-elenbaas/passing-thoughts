@@ -1,10 +1,10 @@
 ---
 layout: post 
-category: 
+category: seeds
 title: "When not to code"
 tagline: 
-tags : [] 
-published: false
+tags : ["codeing"] 
+published: true
 ---
 
 # when not to code
