@@ -1,13 +1,11 @@
 ---
 layout: post 
 category: blog
-title: "Reorganization "
+title: "Reorganization"
 tagline: 
 tags : [] 
 published: true
 ---
-
-# Reorganization 
 
 I decided to revive the separation between posts and ideas in their different stages. 
 

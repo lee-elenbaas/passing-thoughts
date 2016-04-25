@@ -7,7 +7,6 @@ tags : ["description"]
 published: true
 author: Lee Elenbaas
 ---
-# Sitting in the toddler car
 
 Sitting in the toddler car
 

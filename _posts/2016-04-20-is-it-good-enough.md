@@ -7,8 +7,6 @@ tags : []
 published: false
 ---
 
-# Is it good enough? 
-
 That question keeps nagging me when I want to decide whether to publish the post on not. 
 
 On the original passing-thoughts website I had sections.

@@ -7,8 +7,6 @@ tags : ["codeing"]
 published: true
 ---
 
-# when not to code
-
 We are programmers, and we get paid to write code. 
 And we all faced the situation when we get in someone else's code (could be mine from a few hours ago, I am evolving you know) and see code that hurts my eye. 
 

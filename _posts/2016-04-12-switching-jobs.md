@@ -8,8 +8,6 @@ published: true
 author: Lee Elenbaas
 ---
 
-# Switching jobs
-
 For any one who does not know, I am about to switch job.
 
 Nothing out of the ordinary.
