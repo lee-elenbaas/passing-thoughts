@@ -7,6 +7,10 @@ paginate:
 
 Seed items are unpolished ideas in their initial form, They are here to serve as building blockes for future items and posts, when I get around to them.
 
+{% for post in site.categories.seeds %}
+  {% include catandtag.html %}
+{% endfor %}
+
 {% for post in paginator.posts %}
 
   {% include catandtag.html %}
