@@ -92,7 +92,11 @@ img {
     height: 50px;
     display: inline-block;
     background-image: url('../img/dna.png');
-    background-repeat: none;
+    background-size: contin;
+    vertical-align: middle;
+}
+.seeds .title-image {
+    background-image: url('../img/work-in-progress/noun_42732_cc.svg');
 }
 .sciblog {
 
