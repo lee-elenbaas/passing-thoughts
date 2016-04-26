@@ -1,7 +1,10 @@
 <div class="post">
 
     <a href="{{ post.url | prepend: site.baseurl }}" class="post-title-link">
-      <h2>{{post.title}}</h2>
+      <h2>
+        <span class="title-image"></span>
+        {{post.title}}
+      </h2>
     </a>
 
     <div class="post-date">{{ post.date | date: "%b %-d, %Y" }}</div>
