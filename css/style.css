@@ -93,6 +93,8 @@ img {
     display: inline-block;
     background-image: url('../img/dna.png');
     background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
     vertical-align: middle;
 }
 .seeds .title-image {
