@@ -3,9 +3,15 @@
  * noise background from (http://www.noisetexturegenerator.com/)
  */
 
-body { 
+body {
     background-image: url('../img/body.png');
  }
+.rtl {
+  direction: rtl;
+}
+.ltr {
+  direction: ltr;
+}
 .readmore {
 	margin-right: 5px;
 }
