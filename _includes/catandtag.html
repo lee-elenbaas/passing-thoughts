@@ -1,4 +1,8 @@
+{% if post.direction %}
+<div class="post" direction="{{ post.direction }}">
+{% else %}
 <div class="post">
+{% endif %}
 
     <a href="{{ post.url | prepend: site.baseurl }}" class="post-title-link">
       <h2>
@@ -8,7 +12,7 @@
     </a>
 
     <div class="post-date">{{ post.date | date: "%b %-d, %Y" }}</div>
-    
+
     <div class="post-body">
       {% if post.hero_low %}
       {% endif %}
