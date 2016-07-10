@@ -1,90 +1,86 @@
-
-    <!-- Page Content -->
-    <div class="container">
-
-        <div class="row">
-
-            <!-- Blog Post Content Column -->
-            <div class="col-lg-8">
-                <!-- Blog Post -->
-                	<div class="post-list" style="list-style-type: none;">
-						{% for post in paginator.posts %}
-            {% if post.direction %}
+<!-- Page Content -->
+<div class="container">
+  <div class="row">
+    <!-- Blog Post Content Column -->
+    <div class="col-lg-8">
+      <!-- Blog Post -->
+    	<div class="post-list" style="list-style-type: none;">
+  			{% for post in paginator.posts %}
+          {% if post.direction %}
             <div class="{{ post.direction }}">
-            {% else %}
+          {% else %}
             <div>
-							<h2 class="{{ post.categories | join: ' ' }}">
-								<span class="title-image"></span>
-								<a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-							</h2>
-							<div class="author" style="margin-top: -10px;">Posted by
-								<i class="fa fa-user"></i>{{ post.author}}
-								<span class="post-meta"><i class="fa fa-calendar"></i> {{ post.date | date: "%b %-d, %Y" }}</span>
-							</div>
-							<div class="excerpt">{{ post.excerpt }}</div>
-							<div class="readmore" style="float: left;">
-								{% if post.content | post_contains_excerpt_tag %}
-									<a href="{{ post.url | prepend: site.baseurl }}">Read more</a>
-								{% endif %}
-							</div>
-            </div>
-					</div>
-					<hr>
-						<div class="post-list" style="list-style-type: none;">
-							{% endfor %}
-						</div>
-					<!-- Pagination links -->
-					<div class="pagination">
-					  <ul>
-						{% if paginator.previous_page %}
+          {% endif %}
+    				<h2 class="{{ post.categories | join: ' ' }}">
+    					<span class="title-image"></span>
+    					<a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    				</h2>
+    				<div class="author" style="margin-top: -10px;">Posted by
+    					<i class="fa fa-user"></i>{{ post.author}}
+    					<span class="post-meta"><i class="fa fa-calendar"></i> {{ post.date | date: "%b %-d, %Y" }}</span>
+    				</div>
+    				<div class="excerpt">{{ post.excerpt }}</div>
+    				<div class="readmore" style="float: left;">
+    					{% if post.content | post_contains_excerpt_tag %}
+    						<a href="{{ post.url | prepend: site.baseurl }}">Read more</a>
+    					{% endif %}
+    				</div>
+          </div>
+      		<hr>
+        {% endfor %}
+			</div>
+		<!-- Pagination links -->
+		<div class="pagination">
+		  <ul>
+			{% if paginator.previous_page %}
 
-						  {% if paginator.previous_page == 1 %}
-							<li><a href="/">Previous</a></li>
-						  {% else %}
-							<li><a href="{{ site.baseurl }}/page{{ paginator.previous_page }}">Previous</a></li>
-						  {% endif %}
+			  {% if paginator.previous_page == 1 %}
+				<li><a href="/">Previous</a></li>
+			  {% else %}
+				<li><a href="{{ site.baseurl }}/page{{ paginator.previous_page }}">Previous</a></li>
+			  {% endif %}
 
-						{% else %}
-						  <li><span class="disabled">Previous</span></li>
-						{% endif %}
+			{% else %}
+			  <li><span class="disabled">Previous</span></li>
+			{% endif %}
 
-						{% if paginator.page == 1 %}
-						  <li><span class="active">1</span></li>
-						{% else %}
-						  <li><a href="{{ site.baseurl }}/">1</a></li>
-						{% endif %}
+			{% if paginator.page == 1 %}
+			  <li><span class="active">1</span></li>
+			{% else %}
+			  <li><a href="{{ site.baseurl }}/">1</a></li>
+			{% endif %}
 
-						{% for count in (2..paginator.total_pages) %}
+			{% for count in (2..paginator.total_pages) %}
 
-						  {% if count == paginator.page %}
-							<li><span class="active">{{ count }}</span></li>
-						  {% else %}
-							<li><a href="{{ site.baseurl }}/page{{ count }}">{{ count }}</a></li>
-						  {% endif %}
-						{% endfor %}
+			  {% if count == paginator.page %}
+				<li><span class="active">{{ count }}</span></li>
+			  {% else %}
+				<li><a href="{{ site.baseurl }}/page{{ count }}">{{ count }}</a></li>
+			  {% endif %}
+			{% endfor %}
 
-						{% if paginator.next_page %}
-						  <li><a href="{{ site.baseurl }}/page{{ paginator.next_page }}">Next</a></li>
-						{% else %}
-						  <li><span class="disabled">Next</span></li>
-						{% endif %}
-					  </ul>
-					</div>
-            </div>
+			{% if paginator.next_page %}
+			  <li><a href="{{ site.baseurl }}/page{{ paginator.next_page }}">Next</a></li>
+			{% else %}
+			  <li><span class="disabled">Next</span></li>
+			{% endif %}
+		  </ul>
+		</div>
+      </div>
 
-            <!-- Widget -->
-            <div class="col-md-4">
+      <!-- Widget -->
+      <div class="col-md-4">
 
-                {% include search.html %}
+          {% include search.html %}
 
-                {% include categories_box.html %}
+          {% include categories_box.html %}
 
-                {% include recent_posts.html %}
+          {% include recent_posts.html %}
 
-                {% include tags_box.html %}
+          {% include tags_box.html %}
 
-                {% include contact.html %}
-            </div>
-        </div>
-        <!-- /.row -->
-       <hr>
+          {% include contact.html %}
+      </div>
+  </div>
+  <!-- /.row -->
+ <hr>
