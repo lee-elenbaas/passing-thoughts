@@ -4,6 +4,7 @@ title: "השעות הגנובות של הלילה"
 date: "2016-07-03 18:30:50 +0300"
 category: seeds
 published: true
+direction: rtl
 ---
 השעות הגנובות של הלילה
 
