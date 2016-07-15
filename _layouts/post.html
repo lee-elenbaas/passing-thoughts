@@ -31,8 +31,26 @@
 					</div>
 					 {{ content }}
                 </div>
-                Categories: {{ page.categories | join: ', ' }}
-                Tags: {{ page.tags | join: ', ' }}
+                <div>
+                  Categories:
+                  {% for cat in page.categories %}
+                    {% assign cat_name = cat | first %}
+                    {% assign cat_slug = cat_name | slugify  %}
+                    <a href="{{ site.baseurl }}/category/{{ cat_slug }}">
+                      {{cat_name}}
+                    </a>
+                  {% endfor %}
+                </div>
+                <div>
+                  Tags:
+                  {% for tag in page.tags %}
+                    {% assign tag_name = tag | first %}
+                    {% assign tag_slug = tag_name | slugify  %}
+                    <a href="{{ site.baseurl }}/tag/{{ tag_slug }}">
+                      {{tag_name}}
+                    </a>
+                  {% endfor %}
+                </div>
         </div>
 	</div>
 
