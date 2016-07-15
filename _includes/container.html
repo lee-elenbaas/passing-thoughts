@@ -20,7 +20,7 @@
     					<span class="post-meta"><i class="fa fa-calendar"></i> {{ post.date | date: "%b %-d, %Y" }}</span>
     				</div>
     				<div class="excerpt">{{ post.excerpt }}</div>
-    				<div class="read-more" style="float: left;">
+    				<div class="read-more">
     					{% if post.content | post_contains_excerpt_tag %}
     						<a href="{{ post.url | prepend: site.baseurl }}"><i class="more"></i></a>
     					{% endif %}

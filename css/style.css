@@ -14,9 +14,11 @@ body {
 }
 .ltr .read-more {
 	margin-right: 5px;
+  float: left;
 }
 .rtl .read-more {
   margin-left: 5px;
+  float: right;
 }
 .read-more .more::after {
   content: "..."
