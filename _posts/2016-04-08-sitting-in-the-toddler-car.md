@@ -25,6 +25,7 @@ Avoiding reality
 ... just for a few more seconds
 
 ---
+<div class="rtl">
 
 # יושב במכונית הפעוטות
 
@@ -43,3 +44,5 @@ Avoiding reality
 נמנע מהמציאות
 
 ... ולו רק לכמה רגעים
+
+</div>
