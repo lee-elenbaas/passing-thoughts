@@ -6,6 +6,7 @@ author: "אלה ורקר"
 category: poem
 published: true
 direction: rtl
+tag: "מבט על העולם"
 ---
 פרח בר קטן לבד
 
