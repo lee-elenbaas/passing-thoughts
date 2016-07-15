@@ -34,16 +34,16 @@
                 <div>
                   Categories:
                   {% for cat in page.categories %}
-                    <a href="{{ site.baseurl }}/category/{{ cat | first | slugify }}">
-                      {{cat | first}}
+                    <a href="{{ site.baseurl }}/category/{{ cat | slugify }}">
+                      {{cat}}
                     </a>
                   {% endfor %}
                 </div>
                 <div>
                   Tags:
                   {% for tag in page.tags %}
-                    <a href="{{ site.baseurl }}/tag/{{ tag | first | slugify }}">
-                      {{tag | first}}
+                    <a href="{{ site.baseurl }}/tag/{{ tag | slugify }}">
+                      {{tag}}
                     </a>
                   {% endfor %}
                 </div>
