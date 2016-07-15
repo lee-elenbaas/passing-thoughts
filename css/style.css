@@ -15,13 +15,13 @@ body {
 .read-more {
 	margin-right: 5px;
 }
-.read-more .more:after {
+.read-more .more::after {
   content: "..."
 }
-.read-more .more:before {
+.read-more .more::before {
   content: "Read more"
 }
-.ltr .read-more .more:before {
+.rtl .read-more .more::before {
   content: "קרא עוד"
 }
 .navbar-nav {
