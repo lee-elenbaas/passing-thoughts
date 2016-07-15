@@ -12,8 +12,11 @@ body {
 .ltr {
   direction: ltr;
 }
-.read-more {
+.ltr .read-more {
 	margin-right: 5px;
+}
+.rtl .read-more {
+  margin-left: 5px;
 }
 .read-more .more::after {
   content: "..."
