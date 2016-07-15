@@ -12,8 +12,17 @@ body {
 .ltr {
   direction: ltr;
 }
-.readmore {
+.read-more {
 	margin-right: 5px;
+}
+.read-more .more ::after {
+  content: "..."
+}
+.read-more .more ::before {
+  content: "Read more"
+}
+.ltr .read-more .more ::before {
+  content: "קרא עוד"
 }
 .navbar-nav {
     float: right;
