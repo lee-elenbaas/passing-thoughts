@@ -34,20 +34,16 @@
                 <div>
                   Categories:
                   {% for cat in page.categories %}
-                    {% assign cat_name = cat | first %}
-                    {% assign cat_slug = cat_name | slugify  %}
-                    <a href="{{ site.baseurl }}/category/{{ cat_slug }}">
-                      {{cat_name}}
+                    <a href="{{ site.baseurl }}/category/{{ cat | first | slugify }}">
+                      {{cat | first}}
                     </a>
                   {% endfor %}
                 </div>
                 <div>
                   Tags:
                   {% for tag in page.tags %}
-                    {% assign tag_name = tag | first %}
-                    {% assign tag_slug = tag_name | slugify  %}
-                    <a href="{{ site.baseurl }}/tag/{{ tag_slug }}">
-                      {{tag_name}}
+                    <a href="{{ site.baseurl }}/tag/{{ tag | first | slugify }}">
+                      {{tag | first}}
                     </a>
                   {% endfor %}
                 </div>
