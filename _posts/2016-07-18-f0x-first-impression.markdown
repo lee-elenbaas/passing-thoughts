@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "F0X"
+title: "F0X First Impression"
 category: blog
 author: Lee Elenbaas
 date: "2016-07-18 22:09:00 +0300"
