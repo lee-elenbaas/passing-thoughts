@@ -2,8 +2,7 @@
 layout: post
 category: blog
 title: "Switching jobs"
-tagline:
-tags : ["career"]
+tag : career
 published: true
 author: Lee Elenbaas
 ---

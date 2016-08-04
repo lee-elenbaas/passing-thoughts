@@ -3,7 +3,7 @@ layout: post
 title: "challange"
 date: "2016-07-04 16:36:00 +0300"
 published: false
-tags : ["career"]
+tag : "career"
 category: blog
 ---
 I got the challenge today.

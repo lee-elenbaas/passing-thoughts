@@ -1,8 +1,7 @@
 ---
-layout: post 
+layout: post
 category: blog
 title: "Converting goto"
-tagline: 
 tag : codeing
 published: true
 ---
@@ -16,12 +15,12 @@ The basics are the normal loops, conditionals, break and continue.
 
 # Conversion rules
 
-* If you have a goto that jumps forward can be replaced by a simple if on the code it jumps over. 
+* If you have a goto that jumps forward can be replaced by a simple if on the code it jumps over.
 
-* A goto that jump backwards is converted to loop. either a do-while loop, or an infinite loop. 
+* A goto that jump backwards is converted to loop. either a do-while loop, or an infinite loop.
 
-* Several jumps forward with overlapping skipped code can be made using flags, each goto condition will set the appropriate flags, and the code execution will depend on the flags. 
+* Several jumps forward with overlapping skipped code can be made using flags, each goto condition will set the appropriate flags, and the code execution will depend on the flags.
 
-* Multiple jumps backward can be replaced by a single infinite loop, and appropriate flags. 
+* Multiple jumps backward can be replaced by a single infinite loop, and appropriate flags.
 
-In general, it is best to understand what the code tries to do. There is usually a better way then just make it work with the new tools. 
+In general, it is best to understand what the code tries to do. There is usually a better way then just make it work with the new tools.

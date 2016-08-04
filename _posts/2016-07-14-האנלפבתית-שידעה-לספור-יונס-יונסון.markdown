@@ -5,6 +5,7 @@ date: "2016-07-14 23:12:03 +0300"
 category: books
 published: true
 direction: rtl
+tag: review
 ---
 תרגום משוודית רות שפירה
 

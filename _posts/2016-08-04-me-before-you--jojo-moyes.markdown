@@ -5,6 +5,7 @@ date: "2016-08-04 07:17:31 +0300"
 category: books
 published: true
 direction: rtl
+tag: review
 ---
 קריאה סוחפת
 
