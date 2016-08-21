@@ -19,3 +19,17 @@ So lets start with the history:
 This time I want to make a more informed decision. So I decided to start by looking at what it is I really want.
 
 ### Features
+
+#### Data
+
+I have data of several types:
+
+- Documents - those I want backed up for every save, with the ability to revert to any of them.
+This is something I already have today using SparkleShare with butbucket.org as the backend. This works great except for large files.
+
+- User files - basically this is all the other files in the user space. I want them backup on a regular fassion, but so far I have only had that on the same machine using ZFS snapshots.
+This is not a good solution, and I want a better solution. SparkleShare was not an option since it contained too much large files (Downloads for example) that I want to be able to remove from the history easily. And will clutter the history of my documents.
+
+- Photos - All the photos we take, using our camera & phones.
+Up until now I backup up my photos to the network drive, and to a cloud service, glad that i did since that network drive is now dead. But i don't trust the cloud service to be the only backup either.
+Also both options where not easy enough for cataloging and organizing unless i sync a local folder with them, something that is simply not possible due to size of the collection.
