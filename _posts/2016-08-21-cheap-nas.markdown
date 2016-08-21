@@ -9,8 +9,8 @@ This will probably be a series of posts, since it will be an ongoing project.
 
 So lets start with the history:
 - We had a few home computers that needed to share files between them. I considered NAS as an option, but dismissed it at the time for budget and headache reasons. Instead I used an old laptop as home entertainment center.
-- That HP laptop lasted until its display dies, then we moved to a WD PowerBook 1T
-- When that PowerBook died, we already got accustomed to have easy to access network storage, so we upgraded to WD MyCloud 2T.
+- That HP laptop lasted until its display dies, then we moved to a WD PowerBook 1TB.
+- When that PowerBook died, we already got accustomed to have easy to access network storage, so we upgraded to WD MyCloud 2TB.
 - That MyCloud died last week. After it had managed to also get us used to mobile backup.
 - So now i am looking for a new replacement.
 
@@ -37,8 +37,22 @@ They do not need versioning or snapshots, instead they need an origin documentat
 
 ### network
 
-Basically i manage today 3 home networks: at my home, my mother and my grandmother. And I also use and sometimes interfere with the networks at my sister and my father-in-law's.
+Basically I manage today 3 home networks: at my home, my mother and my grandmother. And I also use and sometimes interfere with the networks at my sister and my father-in-law's.
+
+Up until now my storage solution was limited just to my home network, but i have been thinking for a while on replicating it across those different locations so that i will have access to my files in all those locations, as well as backup.
+
+So whatever solution I will choose eventually, i will want it to be open for replication (probably using torrent sync of incremental snapshots)
 
 ### Features
 
-So lets review the features required by me for my data
+So lets review the features required by me for my data and netwrok.
+
+- Capacity: at least 4TB or real storage but I will want to grow it over time. With the overhead for HD redundancy and file overhead - will probably be around 6TB.
+
+- Swap drived: I'll need the ability to swap drives and continue. Not necesarily a hot swap, I don't mind shutting down to do it.
+
+- Network connectivity: It will have to be able to connect to my wired ethernet
+
+- NFS/SMB Share.
+-
+- UPNP/DLNA Media streaming
