@@ -3,3 +3,19 @@ layout: post
 title: "Cheap NAS"
 date: "2016-08-21 08:44:43 +0300"
 ---
+This will probably be a series of posts, since it will be an ongoing project.
+
+## History
+
+So lets start with the history:
+- We had a few home computers that needed to share files between them. I considered NAS as an option, but dismissed it at the time for budget and headache reasons. Instead I used an old laptop as home entertainment center.
+- That HP laptop lasted until its display dies, then we moved to a WD PowerBook 1T
+- When that PowerBook died, we already got accustomed to have easy to access network storage, so we upgraded to WD MyCloud 2T.
+- That MyCloud died last week. After it had managed to also get us used to mobile backup.
+- So now i am looking for a new replacement.
+
+## Requirments
+
+This time I want to make a more informed decision. So I decided to start by looking at what it is I really want.
+
+### Features
