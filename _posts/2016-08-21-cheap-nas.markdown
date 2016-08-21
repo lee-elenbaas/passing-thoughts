@@ -35,4 +35,10 @@ Also both options where not easy enough for cataloging and organizing unless i s
 - Downloads - All apps, drivers, media files, documents, etc. that we download from the world. Those all have limited lifespan, each being downloaded, used for a while and then discarded.
 They do not need versioning or snapshots, instead they need an origin documentation, easy large storage.
 
+### network
+
+Basically i manage today 3 home networks: at my home, my mother and my grandmother. And I also use and sometimes interfere with the networks at my sister and my father-in-law's.
+
 ### Features
+
+So lets review the features required by me for my data
