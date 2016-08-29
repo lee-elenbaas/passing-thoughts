@@ -4,6 +4,7 @@ title: "חמקמקות השייכות"
 date: "2016-08-29 15:57:53 +0300"
 category: seeds
 published: true
+direction: rtl
 ---
 שלי
 
