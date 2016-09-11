@@ -3,7 +3,6 @@ layout: post
 title: "breaking change"
 date: "2016-08-24 18:16:53 +0300"
 category: seeds
-title: "When not to code"
 tag : codeing
 published: true
 ---
