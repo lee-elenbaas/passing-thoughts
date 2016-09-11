@@ -1,0 +1,21 @@
+---
+layout: post
+category: half-baked
+title: "Sudoku"
+tag : description
+published: true
+---
+
+A way to kill time
+
+fill the void in between
+
+Keeps my mind tuned in
+
+Like leaving the engine running
+
+In a getaway car
+
+Does not get you anywhere
+
+But gets you there faster

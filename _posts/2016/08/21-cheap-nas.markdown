@@ -1,0 +1,59 @@
+---
+layout: post
+title: "Cheap NAS"
+date: "2016-08-21 08:44:43 +0300"
+published: true
+---
+This will probably be a series of posts, since it will be an ongoing project.
+
+## History
+
+So lets start with the history:
+- We had a few home computers that needed to share files between them. I considered NAS as an option, but dismissed it at the time for budget and headache reasons. Instead I used an old laptop as home entertainment center.
+- That HP laptop lasted until its display dies, then we moved to a WD PowerBook 1TB.
+- When that PowerBook died, we already got accustomed to have easy to access network storage, so we upgraded to WD MyCloud 2TB.
+- That MyCloud died last week. After it had managed to also get us used to mobile backup.
+- So now i am looking for a new replacement.
+
+## Requirments
+
+This time I want to make a more informed decision. So I decided to start by looking at what it is I really want.
+
+### Data
+
+I have data of several types:
+
+- Documents - those I want backed up for every save, with the ability to revert to any of them.
+This is something I already have today using SparkleShare with butbucket.org as the backend. This works great except for large files.
+
+- User files - basically this is all the other files in the user space. I want them backup on a regular fassion, but so far I have only had that on the same machine using ZFS snapshots.
+This is not a good solution, and I want a better solution. SparkleShare was not an option since it contained too much large files (Downloads for example) that I want to be able to remove from the history easily. And will clutter the history of my documents.
+
+- Photos - All the photos we take, using our camera & phones.
+Up until now I backup up my photos to the network drive, and to a cloud service, glad that i did since that network drive is now dead. But i don't trust the cloud service to be the only backup either.
+Also both options where not easy enough for cataloging and organizing unless i sync a local folder with them, something that is simply not possible due to size of the collection.
+
+- Downloads - All apps, drivers, media files, documents, etc. that we download from the world. Those all have limited lifespan, each being downloaded, used for a while and then discarded.
+They do not need versioning or snapshots, instead they need an origin documentation, easy large storage.
+
+### network
+
+Basically I manage today 3 home networks: at my home, my mother and my grandmother. And I also use and sometimes interfere with the networks at my sister and my father-in-law's.
+
+Up until now my storage solution was limited just to my home network, but i have been thinking for a while on replicating it across those different locations so that i will have access to my files in all those locations, as well as backup.
+
+So whatever solution I will choose eventually, i will want it to be open for replication (probably using torrent sync of incremental snapshots)
+
+### Features
+
+So lets review the features required by me for my data and netwrok.
+
+- Capacity: at least 4TB or real storage but I will want to grow it over time. With the overhead for HD redundancy and file overhead - will probably be around 6TB.
+
+- Swap drived: I'll need the ability to swap drives and continue. Not necesarily a hot swap, I don't mind shutting down to do it.
+
+- Network connectivity: It will have to be able to connect to my wired ethernet
+
+- NFS/SMB Share.
+-
+- UPNP/DLNA Media streaming

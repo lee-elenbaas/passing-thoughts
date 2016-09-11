@@ -1,0 +1,81 @@
+---
+layout: post
+category: blog
+title: "5 hours a day"
+tag : career 
+published: true
+---
+# New job
+
+Started a new job yesterday. I am back in the position of learning from scratch.
+
+This new company has a strong emphasis on the organizational culture:
+
+* How to write the code
+* How to get a task
+* How to work on it
+* How to report it
+* How to email
+* How to communicate
+
+And more...
+
+I can tell from the tools and the code base that the company has roots deep into the C/C++ Eco system, despite the work itself being in JavaScript. This means different tools and mindset then in most other JavaScript places I encountered.
+
+Something I'll have to get used too.
+
+# Commute time
+
+But the mind boggling thing to me is the commute time.
+
+2.5 hours for each direction. 5 hours a day. Half a day goes for every workday.
+
+Yes I know it before I took the job, but knowing is not the same as feeling.
+Yesterday was the first day in a long while where I haven't seen any of my kids awake at all. I left before they woke up, and came back after they already fall asleep.
+Why this morning I left only after I saw them leaving for their day.
+
+## Transportation
+
+I rolled out a car since for it will be Russian Roulette with almost fully loaded gun.
+
+I know I will fall asleep on the wheel. The only questions are when it will happen, and how badly I'll be hurt.
+
+This leaves public transportation, that is less then friendly.
+
+## Current rout
+
+* Home to bus station - same as with my previous work, mostly by car when my wife drop off the kids.
+
+* Bus to the train station - same as with the previous work. Sadly the bus usually arrive just as the train leaves so I have to wait for the next one.
+
+* Train to a more central station,where I'll wait for the train that will get me to work
+
+* Train to train station closest to work
+
+* bus or shuttle to work
+
+And the ride home is the same in reverse.
+
+I just realized I forgot to measure the times for each segment. I'll do it in the next few days and report it.
+
+# Mitigations
+
+There are mitigating factors.
+
+I can start the work on the train. Most days there is enough space to work. I have the laptop with everything I need on it. I just need to organize it, something I plan to do this week.
+
+This should give about 90 min of offline work in each direction.
+
+# Future
+
+I plan to improve the first and last parts by moving back to the bike.
+
+A new train station is planned closer to my work that will eliminate one step from this route.
+
+The real mitigator is, working from home.
+I do not plan on working totally from home, history thought me thus is problematic for me, but a few days a week will be great.  
+
+# Rewrite
+
+I am rewriting this post, more annoyed then I was when I first wrote it, since I lost it over network issue along the way.
+Mobile is not a good enough tool, yet.
