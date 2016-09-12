@@ -20,6 +20,7 @@ gems: [jekyll-paginate]
 markdown: kramdown
 paginate: 5
 paginate_path: 'page:num/'
+include: ['_posts']
 permalink: /:date/:title
 comments: true
 excerpt_separator: <!-- more -->
