@@ -3,7 +3,6 @@ layout: post
 category: blog
 title: "D&D"
 date: "2016-07-03 09:34:01 +0300"
-tag:
 published: true
 ---
 Yesterday we took the slow weekend to start playing D&D as a family.
