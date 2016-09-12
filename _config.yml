@@ -20,6 +20,6 @@ gems: [jekyll-paginate]
 markdown: kramdown
 paginate: 5
 paginate_path: 'page:num/'
-include: ['_posts']
+include: ['_posts/*']
 comments: true
 excerpt_separator: <!-- more -->
