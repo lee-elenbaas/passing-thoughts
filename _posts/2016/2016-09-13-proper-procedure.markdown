@@ -20,4 +20,6 @@ The last option is the trickiest one, it is based on three steps.
 - The first step, do it yourself, is easy, just do it.
 - The second step, getting the compensation is usually easy as well, you can always do less from your side
   of the agreement.
-- The last part is the hard part, making the other side to accept the compensation. If he does not accept it it can lead to 
+- The last part is the hard part, making the other side to accept the compensation.
+
+If the other side does not accept the compensation it can lead to him starting the cycle again, but from the other side, leading to a blow up. It can lead to legal arguments. 
