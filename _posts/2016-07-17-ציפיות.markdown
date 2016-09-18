@@ -6,6 +6,7 @@ published: true
 author: lee elenbaas
 date: "2016-07-17 23:57:00 +0300"
 direction: rtl
+author: Lee Elenbaas
 ---
 הציפיה
 

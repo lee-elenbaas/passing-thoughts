@@ -6,6 +6,7 @@ category: books
 published: true
 direction: rtl
 tag: review
+author: Lee Elenbaas
 ---
 סדרת "הבכורה" ספר ראשון
 

@@ -5,6 +5,7 @@ date: "2016-07-20 09:29:49 +0300"
 category: half-baked
 direction: rtl
 published: true
+author: Lee Elenbaas
 ---
 להביט על העולם מלמעלה
 

@@ -6,6 +6,7 @@ category: books
 tag : review
 published: true
 direction: rtl
+author: Lee Elenbaas
 ---
 כתוב נהדר.
 

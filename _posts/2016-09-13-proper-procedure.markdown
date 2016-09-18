@@ -4,6 +4,7 @@ title: "proper procedure"
 date: "2016-09-13 08:18"
 category: blog
 published: true
+author: Lee Elenbaas
 ---
 There is a certain order things has to be done.
 

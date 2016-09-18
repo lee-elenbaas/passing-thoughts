@@ -3,6 +3,7 @@ layout: post
 category: blog
 title: "Is it good enough? "
 published: true
+author: Lee Elenbaas
 ---
 
 That question keeps nagging me when I want to decide whether to publish the post on not.

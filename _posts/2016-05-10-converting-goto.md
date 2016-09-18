@@ -4,6 +4,7 @@ category: blog
 title: "Converting goto"
 tag : codeing
 published: true
+author: Lee Elenbaas
 ---
 I am working on a task I thought have passed from the world:
 Converting "goto" code to functional programming.

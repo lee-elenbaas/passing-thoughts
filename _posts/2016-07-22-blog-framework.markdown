@@ -4,6 +4,7 @@ title: "Blog framework"
 date: "2016-07-22 15:17:24 +0300"
 category: blog
 published: true
+author: Lee Elenbaas
 ---
 As part of playing around with the blog, i decided to make it slightly easier to use.
 

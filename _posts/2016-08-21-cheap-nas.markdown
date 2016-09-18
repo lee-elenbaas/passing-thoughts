@@ -3,6 +3,7 @@ layout: post
 title: "Cheap NAS"
 date: "2016-08-21 08:44:43 +0300"
 published: true
+author: Lee Elenbaas
 ---
 This will probably be a series of posts, since it will be an ongoing project.
 

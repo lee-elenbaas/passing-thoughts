@@ -5,6 +5,7 @@ date: "2016-07-20 08:57:07 +0300"
 category: seeds
 published: true
 direction: rtl
+author: Lee Elenbaas
 ---
 הלכנו יחד
 

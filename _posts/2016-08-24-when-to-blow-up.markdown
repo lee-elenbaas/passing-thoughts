@@ -4,6 +4,7 @@ title: "When to blow up"
 date: "2016-08-24 18:06:25 +0300"
 category: half-baked
 published: true
+author: Lee Elenbaas
 ---
 Think about it carefully
 

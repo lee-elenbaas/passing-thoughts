@@ -5,6 +5,7 @@ date: "2016-08-29 16:06:46 +0300"
 category: seeds
 direction: rtl
 published: false
+author: Lee Elenbaas
 ---
 יושב שקוע בעולמי הקטן
 

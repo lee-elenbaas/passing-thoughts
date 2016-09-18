@@ -5,6 +5,7 @@ date: "2016-07-10 09:41:55 +0300"
 direction: rtl
 category: books
 tag: review
+author: Lee Elenbaas
 ---
 סאגה משפחתית קורעת לב,
 

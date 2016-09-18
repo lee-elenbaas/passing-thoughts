@@ -4,6 +4,7 @@ title: "searching for the right place"
 date: "2016-09-11 20:11"
 category: career
 published: false
+author: Lee Elenbaas
 ---
 I am still on a search for the right place for me.
 

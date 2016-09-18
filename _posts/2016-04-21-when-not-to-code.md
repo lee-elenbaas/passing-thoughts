@@ -4,6 +4,7 @@ category: seeds
 title: "When not to code"
 tag : codeing
 published: true
+author: Lee Elenbaas
 ---
 
 We are programmers, and we get paid to write code.

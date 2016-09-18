@@ -3,6 +3,7 @@ layout: post
 category: blog
 title: "Reorganization"
 published: true
+author: Lee Elenbaas
 ---
 
 I decided to revive the separation between posts and ideas in their different stages.

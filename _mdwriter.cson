@@ -49,6 +49,7 @@ frontMatter: """
 layout: "{layout}"
 title: "{title}"
 date: "{date}"
+author: Lee Elenbaas
 ---
 """
 

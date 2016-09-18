@@ -5,6 +5,7 @@ category: "blog"
 title: "slow start"
 date: "2016-05-09 19:18:42 +0300"
 publish: false
+author: Lee Elenbaas
 ---
 Today was the second day i was informed that my performance was not up to the expected level.
 
