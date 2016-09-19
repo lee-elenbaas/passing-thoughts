@@ -1,40 +1,42 @@
 ---
 layout: post
 category: poem
-title: Tea
+title: Advice to a Poet
 published: true
 author: Lee Elenbaas
 ---
-Small fire burning below the pot
+Aim the camera in your head
 
-Hot steam paints visions of a better life
+click, and the moment is frozen in your memory
 
-A dash of work, a drop of studies
+take out the tools
 
-And a whole lot of responsibilities that add body to the
-mix
+chisels, hammers and pokes
 
-<br>
+shape this image into words
 
-Pour it when it boiled into small cups, and drink in small
-sips
+work fast before it melts
 
-Taste the bitterness of the pain
+not that it will ever go away
 
-The sweetness of joy
-
-The hope, the loss, the life
+but hurry before it became something new.
 
 <br>
 
-Savor the aroma,
+When the work is done
 
-Inhale deeply
+Don't ever look back
 
-And then share it with those you love
+The frozen fragment that was left from the moment
 
-Make it the greatest tea time for your soul
+Never feels the same any more
+
+Just take your distance
+
+And read it a while later
+
+As a new experience.
 
 ---------------------
 
-- published on [new stage](http://stage.co.il/Stories/344548)
+- published on [new stage](http://stage.co.il/Stories/344580)
