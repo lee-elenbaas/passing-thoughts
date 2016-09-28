@@ -22,10 +22,17 @@ Communication is instant, cross all boundaries, one world, one local village.
 
 What will happen next?
 
-Cryogenics? That will allow a person to freeze his life to be able to participate in his great-great-grand-children's first birth? That you can go to sleep until a cure for your illness has been found and then continue on as usual?
+Cryogenics?
+
+That will allow a person to freeze his life to be able to participate in his great-great-grand-children's first birth? That you can go to sleep until a cure for your illness has been found and then continue on as usual?
 Can a marriage be maintained is one partner decided to freeze itself for 10 years? or 5? or even just one year? What if the other partner choose not to join the freeze?
 
-Space exploration? The vast distances where the fastest communication we can conceive today, will take hours inside our solar system, and years outside of it.
+Space exploration?
+
+The vast distances where the fastest communication we can conceive today, will take hours inside our solar system, and years outside of it.
 How we will split up back into separate villages once we spread out to space, just from the sheer size of it.
 
-What if we join the two together? Space ships with delegations from one culture in Cryogenics traveling for years to some distant planet, only to reach it and discover that by the time they arrive, a different delegation from another culture traveled faster and established a settlement with different rules and beliefs?
+What if we join the two together?
+
+Space ships that travel distances with groups of frozen people on board, destined to wake up on their distant target.
+With delegations from one culture in Cryogenics traveling for years to some distant planet, only to reach it and discover that by the time they arrive, a different delegation from another culture traveled faster and established a settlement with different rules and beliefs?
