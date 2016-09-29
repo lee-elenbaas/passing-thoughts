@@ -5,6 +5,7 @@ date: '2016-09-29 08:14'
 author: Lee Elenbaas
 direction: rtl
 published: true
+category: half-baked
 ---
 
 מכסה כשמיכה
