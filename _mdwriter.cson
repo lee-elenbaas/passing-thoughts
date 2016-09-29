@@ -37,7 +37,7 @@ frontMatterNameTags: "tags"
 frontMatterNameCategories: "categories"
 
 # filename format of new drafts created
-newDraftFileName: "{slug}{extension}"
+newDraftFileName: "{year}-{month}-{day}-{slug}{extension}"
 # filename format of new posts created
 newPostFileName: "{year}-{month}-{day}-{slug}{extension}"
 

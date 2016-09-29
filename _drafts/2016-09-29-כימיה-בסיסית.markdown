@@ -1,0 +1,6 @@
+---
+layout: "post"
+title: "כימיה בסיסית"
+date: "2016-09-29 08:36"
+author: Lee Elenbaas
+---
