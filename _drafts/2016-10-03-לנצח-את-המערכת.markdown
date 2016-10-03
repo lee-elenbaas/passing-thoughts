@@ -6,6 +6,7 @@ author: Lee Elenbaas
 tag: children
 category: half-baked
 direction: rtl
+published: true
 ---
 להתגנב בלאט מהמיטה
 
