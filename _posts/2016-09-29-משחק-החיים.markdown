@@ -8,7 +8,7 @@ published: true
 category: half-baked
 ---
 
-אתה מתייב לשולחן
+אתה מתישב לשולחן
 
 בוחן כל הקלפים בידך
 
