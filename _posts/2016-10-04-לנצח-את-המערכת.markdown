@@ -1,13 +1,14 @@
 ---
-layout: "post"
-title: "לנצח את המערכת"
-date: "2016-10-03 23:59"
+layout: post
+title: לנצח את המערכת
+date: '2016-10-04 00:04'
 author: Lee Elenbaas
 tag: children
 category: half-baked
 direction: rtl
 published: true
 ---
+
 להתגנב בלאט מהמיטה
 
 כשאמא נרדמת
