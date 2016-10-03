@@ -3,4 +3,18 @@ layout: "post"
 title: "לנצח את המערכת"
 date: "2016-10-03 23:59"
 author: Lee Elenbaas
+tag: children
+category: half-baked
+direction: rtl
 ---
+להתגנב בלאט מהמיטה
+
+כשאמא נרדמת
+
+להיכנס מתחת לשמיכה של ההורים
+
+בחיוך רחב ומבט ממזרי
+
+לכסות את הראש שלא יבחינו
+
+וכך לנצח את המערכת
