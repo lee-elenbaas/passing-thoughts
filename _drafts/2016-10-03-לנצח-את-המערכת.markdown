@@ -1,0 +1,6 @@
+---
+layout: "post"
+title: "לנצח את המערכת"
+date: "2016-10-03 23:59"
+author: Lee Elenbaas
+---
