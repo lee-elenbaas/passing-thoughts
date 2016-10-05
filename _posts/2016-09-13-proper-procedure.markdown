@@ -6,7 +6,7 @@ category: blog
 published: true
 author: Lee Elenbaas
 ---
-There is a certain order things has to be done.
+There is a certain order things have to be done.
 
 Not due to real constraints, but due to legal thinking.
 
@@ -14,7 +14,7 @@ You have an agreement. Agreement naturally means both sides have to do something
 
 And when the other side does not uphold his end of the bargain you basically have several options:
 - Blow the whole agreement
-- Ignore it and stay quite
+- Ignore it and stay quiet
 - Do it yourself and demand compensation
 
 The last option is the trickiest one, it is based on three steps.
