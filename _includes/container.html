@@ -6,11 +6,7 @@
       <!-- Blog Post -->
     	<div class="post-list" style="list-style-type: none;">
   			{% for post in paginator.posts %}
-          {% if post.direction %}
-            <div class="{{ post.direction }}">
-          {% else %}
-            <div>
-          {% endif %}
+          <div class="{{ post.direction }}">
     				<h2 class="{{ post.categories | join: ' ' }}">
     					<span class="title-image"></span>
     					<a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
