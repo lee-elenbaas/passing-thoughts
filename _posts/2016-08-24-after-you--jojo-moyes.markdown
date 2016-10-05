@@ -2,8 +2,8 @@
 layout: post
 title: "after you - jojo moyes"
 date: "2016-08-24 18:09:41 +0300"
-category: books
-published: true
+category: review
+published: book
 direction: rtl
 tag: review
 author: Lee Elenbaas

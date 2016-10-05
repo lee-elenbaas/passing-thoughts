@@ -2,10 +2,10 @@
 layout: post
 title: "me before you - jojo moyes"
 date: "2016-08-04 07:17:31 +0300"
-category: books
+category: review
 published: true
 direction: rtl
-tag: review
+tag: book
 author: Lee Elenbaas
 ---
 קריאה סוחפת

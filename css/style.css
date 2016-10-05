@@ -120,6 +120,9 @@ img {
 .seeds .title-image {
     background-image: url('../img/work-in-progress/noun_42732_cc.svg');
 }
+.review .title-image {
+    background-image: url('../img/review/1475701188_eye_preview_see_seen_view.svg');  
+}
 .sciblog {
 
 }

@@ -2,10 +2,10 @@
 layout: post
 title: "כל הדברים שעשיתי - גבריאל זווין"
 date: "2016-07-20 08:18:46 +0300"
-category: books
+category: review
 published: true
 direction: rtl
-tag: review
+tag: book
 author: Lee Elenbaas
 ---
 סדרת "הבכורה" ספר ראשון

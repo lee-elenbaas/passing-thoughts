@@ -2,8 +2,8 @@
 layout: post
 title: "הכלב היהודי - אשר קרביץ"
 date: "2016-09-05 17:55:22 +0300"
-category: books
-tag : review
+category: review
+tag : book
 published: true
 direction: rtl
 author: Lee Elenbaas

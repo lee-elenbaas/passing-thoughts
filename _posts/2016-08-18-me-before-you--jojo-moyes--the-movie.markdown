@@ -2,10 +2,10 @@
 layout: post
 title: "me before you - jojo moyes - the movie"
 date: "2016-08-18 07:29:06 +0300"
-category: books
+category: review
 published: true
 direction: rtl
-tag: review
+tag: movie
 author: Lee Elenbaas
 ---
 סרט נהדר
