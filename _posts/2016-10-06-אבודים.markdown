@@ -1,9 +1,12 @@
 ---
-layout: "post"
-title: "אבודים"
-date: "2016-10-05 19:25"
+layout: post
+title: אבודים
+date: '2016-10-06 08:44'
 author: Lee Elenbaas
+category: seeds
+direction: rtl
 ---
+
 מביטים ימינה
 
 מביטים שמאלה
