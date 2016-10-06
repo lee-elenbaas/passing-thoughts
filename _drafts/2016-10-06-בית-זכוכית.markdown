@@ -1,6 +1,0 @@
----
-layout: "post"
-title: "בית זכוכית"
-date: "2016-10-06 08:59"
-author: Lee Elenbaas
----
