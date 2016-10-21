@@ -3,4 +3,24 @@ layout: "post"
 title: "פינוק"
 date: "2016-10-21 07:14"
 author: Lee Elenbaas
+category: seeds
+published: true
+direction: rtl
 ---
+אני רוצה
+
+את זה ואת זה
+
+מקבל
+
+מזה ומזה
+
+ורק רוצה
+
+עוד מזה
+
+וקצת מזה
+
+בסבב אין סופי
+
+של פינוק
