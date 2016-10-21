@@ -1,12 +1,13 @@
 ---
-layout: "post"
-title: "פינוק"
-date: "2016-10-21 07:14"
+layout: post
+title: פינוק
+date: '2016-10-21 07:16'
 author: Lee Elenbaas
 category: seeds
 published: true
 direction: rtl
 ---
+
 אני רוצה
 
 את זה ואת זה
