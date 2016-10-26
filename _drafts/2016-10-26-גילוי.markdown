@@ -1,0 +1,6 @@
+---
+layout: "post"
+title: "גילוי"
+date: "2016-10-26 17:35"
+author: Lee Elenbaas
+---
