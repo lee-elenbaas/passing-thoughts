@@ -1,6 +1,0 @@
----
-layout: "post"
-title: ""עובדי מדינה לא מייצרים כסף""
-date: "2016-10-26 16:53"
-author: Lee Elenbaas
----
