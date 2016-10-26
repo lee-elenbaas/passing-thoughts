@@ -1,0 +1,6 @@
+---
+layout: "post"
+title: "מלון רבבות כוכבים"
+date: "2016-10-26 17:40"
+author: Lee Elenbaas
+---
