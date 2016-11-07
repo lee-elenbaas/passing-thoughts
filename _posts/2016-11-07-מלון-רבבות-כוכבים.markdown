@@ -1,10 +1,11 @@
 ---
-layout: "post"
-title: "מלון רבבות כוכבים"
-date: "2016-10-26 17:40"
+layout: post
+title: מלון רבבות כוכבים
+date: '2016-11-07 18:24'
 author: Lee Elenbaas
 category: seeds
 ---
+
 לחוש את האדמה מבעד לשק השינה
 
 לשמוע את נשימות האנשים סביבי
