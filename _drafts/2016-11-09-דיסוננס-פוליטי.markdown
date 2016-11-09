@@ -1,0 +1,6 @@
+---
+layout: "post"
+title: "דיסוננס פוליטי"
+date: "2016-11-09 10:14"
+author: Lee Elenbaas
+---
