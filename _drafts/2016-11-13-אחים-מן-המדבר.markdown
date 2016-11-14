@@ -1,6 +1,6 @@
 ---
 layout: "post"
-title: "אחים מן המדבר"
+title: "אחים מן המדבר - דניאל שלם"
 date: "2016-11-13 18:36"
 author: Lee Elenbaas
 ---
