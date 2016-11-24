@@ -1,6 +1,0 @@
----
-layout: "post"
-title: "נשיקות"
-date: "2016-11-24 07:47"
-author: Lee Elenbaas
----
