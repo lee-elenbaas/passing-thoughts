@@ -1,0 +1,6 @@
+---
+layout: "post"
+title: "החינוך הדמוקרטי - יעקב הכט"
+date: "2016-11-24 09:23"
+author: Lee Elenbaas
+---
