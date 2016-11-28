@@ -1,11 +1,12 @@
 ---
-layout: "post"
-title: "אמון"
-date: "2016-11-28 22:56"
+layout: post
+title: אמון
+date: '2016-11-28 23:05'
 author: Lee Elenbaas
 direction: rtl
 category: seeds
 ---
+
 כמו מגדל קלפים
 
 נבנה האמון
