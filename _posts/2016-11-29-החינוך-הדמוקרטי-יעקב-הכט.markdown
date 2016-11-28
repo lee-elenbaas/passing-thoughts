@@ -1,12 +1,13 @@
 ---
-layout: "post"
-title: "החינוך הדמוקרטי - יעקב הכט"
-date: "2016-11-29 00:00"
+layout: post
+title: החינוך הדמוקרטי - יעקב הכט
+date: '2016-11-29 00:24'
 author: Lee Elenbaas
 category: review
 tag: book
 direction: rtl
 ---
+
 ספר זה מעלה את סיפור תחילתו של החינוך הדמוקרט כתנועה בישראל
 
 את העקרונות העומדים מאחוריו
