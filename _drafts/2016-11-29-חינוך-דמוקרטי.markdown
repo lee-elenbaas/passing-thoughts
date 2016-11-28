@@ -1,0 +1,6 @@
+---
+layout: "post"
+title: "חינוך דמוקרטי"
+date: "2016-11-29 00:00"
+author: Lee Elenbaas
+---
