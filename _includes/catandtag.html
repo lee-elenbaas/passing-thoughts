@@ -1,16 +1,10 @@
-{% if post.direction %}
 <div class="post {{ post.direction }}">
-{% else %}
-<div class="post">
-{% endif %}
-
     <a href="{{ post.url | prepend: site.baseurl }}" class="post-title-link">
-      <h2>
+      <h2 class="{{ post.categories | join: ' ' }}">
         <span class="title-image"></span>
         {{post.title}}
       </h2>
     </a>
-
     <div class="post-date">{{ post.date | date: "%b %-d, %Y" }}</div>
 
     <div class="post-body">
