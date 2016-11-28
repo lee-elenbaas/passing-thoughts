@@ -1,0 +1,6 @@
+---
+layout: "post"
+title: "אמון"
+date: "2016-11-28 22:56"
+author: Lee Elenbaas
+---
