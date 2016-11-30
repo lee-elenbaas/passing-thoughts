@@ -1,6 +1,0 @@
----
-layout: "post"
-title: "עולם של שחור ולבן"
-date: "2016-11-30 18:38"
-author: Lee Elenbaas
----
