@@ -1,9 +1,11 @@
 ---
-layout: "post"
-title: "5 hours a day, after thoughts"
-date: "2016-12-01 08:57"
+layout: post
+title: '5 hours a day, after thoughts'
+date: '2016-12-01 09:08'
 author: Lee Elenbaas
+category: blog
 ---
+
 With the introduction of a new train station, the ride now take a slightly less time (not significantly) and is less complicated.
 
 My day today route today is like this:
@@ -26,7 +28,8 @@ And the ride back:
 It takes a lot of my day to day time.
 
 And it gives me a lot of free time, time to read, to write, to think.
-Time that when i look back - was needed but I never know how to take it for myself.
+
+Time that when I look back - was needed but I never know how to take it for myself.
 Time i am not sure i want to give away again, despite it taking time from the family and from work.
 
-I need to find a better balance
+I need to find a better balance in my life, and this time to myself is a part of it.
