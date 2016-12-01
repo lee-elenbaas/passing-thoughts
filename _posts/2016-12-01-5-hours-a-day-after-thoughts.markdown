@@ -13,7 +13,7 @@ My day today route today is like this:
 - Home to bus station by car, my wife drops me off when she drops the kids
 - Bus to the train station, if not properly times, the wait here can be up to 30min
 - Train to Tel Aviv
-- Switching trains in Tel Aviv, usually waiting more then 30min
+- Switching trains in Tel Aviv, usually waiting more then 30min, sometimes close to an hour
 - Train to Netanya
 - Walk to the office, there is also a bus that is aligned the trian times, using it takes the same time, but will be good for bad weather.
 
