@@ -1,6 +1,0 @@
----
-layout: "post"
-title: "שבבחים"
-date: "2016-12-01 16:02"
-author: Lee Elenbaas
----
