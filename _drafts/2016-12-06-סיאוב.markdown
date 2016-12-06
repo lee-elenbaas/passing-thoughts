@@ -1,6 +1,0 @@
----
-layout: "post"
-title: "סיאוב"
-date: "2016-12-06 09:39"
-author: Lee Elenbaas
----
