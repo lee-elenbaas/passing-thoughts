@@ -1,6 +1,0 @@
----
-layout: "post"
-title: "הסכנה באזור הנוחות"
-date: "2016-12-07 20:31"
-author: Lee Elenbaas
----
