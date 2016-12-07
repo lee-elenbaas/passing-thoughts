@@ -1,6 +1,6 @@
 ---
 layout: post
-title: זה יסתיים בדם
+title: סיאוב
 date: '2016-12-06 09:46'
 author: Lee Elenbaas
 category: half-baked
@@ -41,7 +41,9 @@ direction: rtl
 
 רודפת גילוי
 
-מתלווה בחקירה
+מחופה בטיוח
+
+מתחיל חקירה
 
 מעלה חשדות
 
@@ -56,3 +58,11 @@ direction: rtl
 <br>
 
 זה יסתיים בדם
+
+או שמה
+
+גם הדם הוא רק
+
+עוד שלב
+
+של סיאוב
