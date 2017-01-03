@@ -1,0 +1,6 @@
+---
+layout: "post"
+title: "הליכודניקים החדשים"
+date: "2017-01-03 19:02"
+author: Lee Elenbaas
+---
