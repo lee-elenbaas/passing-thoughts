@@ -3,6 +3,8 @@ layout: post
 title: הליכודניקים החדשים
 date: '2017-01-12 23:31'
 author: Lee Elenbaas
+direction: rtl
+category: blog
 ---
 
 קיבלתי היום הצעה מעניינת, להצטרף
