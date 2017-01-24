@@ -18,3 +18,7 @@ According to the [Hola DNA](http://hola.org/dna) the first few weeks are a test,
 Socially it felt even worse for me. The feeling was that people are afraid to say good morning to you, since you will be gone the next day.
 
 The next few months were lonely programming, my assigned mentor was mostly out of the country, and the communication with him was purely a few product related questions, and some code issues.
+
+There were positive aspects for working at Hola. The task was interesting, I enjoyed the fact that i was working on an open source project. The perks were fun. I think Hola is doing a good thing in how they treat the product, and in how they treat the code. I have disagreements with some of the choices Hola made in terms of technology, and conventions, but those are always compromises, and the compromises Hola did, are sensible.
+
+This got me to a period of background interviews in other places, while maintaining the work at Hola. Some of those interviews went well, but when I looked back at the company and what was being offered. I kept on choosing to stay at Hola.
