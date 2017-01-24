@@ -12,4 +12,9 @@ I did not do a good job at that contest, [my submission](https://bitbucket.org/l
 But apparently it was good enough to cought attention, so I got a job interview without looking for.
 
 Meanwhile at Gigya question marks have been forming whether I should stay there, so I went to the interview.
-And eventually took the offer. 
+And eventually took the offer.
+
+According to the [Hola DNA](http://hola.org/dna) the first few weeks are a test, and they felt like one too.
+Socially it felt even worse for me. The feeling was that people are afraid to say good morning to you, since you will be gone the next day.
+
+The next few months were lonely programming, my assigned mentor was mostly out of the country, and the communication with him was purely a few product related questions, and some code issues.
