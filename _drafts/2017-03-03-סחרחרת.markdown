@@ -3,6 +3,8 @@ layout: "post"
 title: "סחרחרת"
 date: "2017-03-03 23:53"
 author: Lee Elenbaas
+dir: rtl
+category: seeds
 ---
 לשקוע בטהום בלתי נשלטת
 
