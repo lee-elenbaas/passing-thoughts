@@ -1,11 +1,12 @@
 ---
-layout: "post"
-title: "סחרחרת"
-date: "2017-03-03 23:53"
+layout: post
+title: סחרחרת
+date: '2017-03-04 00:02'
 author: Lee Elenbaas
 dir: rtl
 category: seeds
 ---
+
 לשקוע בטהום בלתי נשלטת
 
 להסתחרר סחור סחור בין תחושות האובדן והכעס
