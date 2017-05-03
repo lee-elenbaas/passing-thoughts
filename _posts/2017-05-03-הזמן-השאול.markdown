@@ -1,11 +1,12 @@
 ---
-layout: "post"
-title: "הזמן השאול"
-date: "2017-05-03 06:10"
+layout: post
+title: הזמן השאול
+date: '2017-05-03 06:15'
 author: Lee Elenbaas
 category: seeds
 direction: rtl
 ---
+
 הזמן השאול
 
 בין יקיצה לקימה
