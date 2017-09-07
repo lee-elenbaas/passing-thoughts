@@ -1,0 +1,6 @@
+---
+layout: "post"
+title: "חומות השתיקה"
+date: "2017-09-07 15:04"
+author: Lee Elenbaas
+---
