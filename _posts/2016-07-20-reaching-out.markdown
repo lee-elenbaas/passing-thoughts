@@ -6,7 +6,7 @@ category: seeds
 author: Lee Elenbaas
 published: true
 ---
-i am sending my void across the deep
+i am sending my voice across the deep
 
 reaching out to someone who may never answer
 
