@@ -88,7 +88,7 @@ def convert_with_claude(content: str, is_markdown: bool) -> dict:
 Return a JSON object with these fields:
 - "title": a suitable title for the post (use existing title if one is present in the content)
 - "slug": URL-safe, lowercase, English-only, hyphenated (max 50 chars — transliterate Hebrew if needed)
-- "category": one word, choose the best fit: "poem", "thought", "story", or "tech"
+- "category": choose the best fit from these existing categories: "poem", "seeds", "half-baked", "blog", "review", "books"
 - "tags": array of 2-4 lowercase hyphenated tags
 - "direction": "rtl" if the post body is primarily in Hebrew or another right-to-left language, otherwise "ltr"
 - "body": the post body as markdown, WITHOUT any Jekyll frontmatter block
