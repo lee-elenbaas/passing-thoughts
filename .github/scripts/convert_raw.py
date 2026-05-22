@@ -164,7 +164,23 @@ def process_new_file(raw_file: str, base_branch: str, today: str) -> None:
     branch = f"post/{today}-{metadata['slug']}"
     post_path = post_path_from_branch(branch)
 
-    # Create branch, write post, remove raw file, push
+    # Step 1: Write branch reference into raw file on base branch FIRST,
+    # so the PR branch's delete has no conflict on merge.
+    if path.suffix == ".txt":
+        md_path = path.with_suffix(".md")
+        md_path.write_text(add_frontmatter_field(content, "branch", branch), encoding="utf-8")
+        path.unlink()
+        run(["git", "add", str(md_path), raw_file])
+        raw_file = str(md_path)
+        path = md_path
+    else:
+        path.write_text(add_frontmatter_field(content, "branch", branch), encoding="utf-8")
+        run(["git", "add", raw_file])
+
+    run(["git", "commit", "-m", f"Store branch reference in raw file [skip ci]"])
+    run(["git", "push"])
+
+    # Step 2: Create PR branch from updated HEAD — raw file already has branch: field
     run(["git", "checkout", "-b", branch])
     post_path.write_text(build_post_content(metadata), encoding="utf-8")
     path.unlink()
@@ -172,7 +188,7 @@ def process_new_file(raw_file: str, base_branch: str, today: str) -> None:
     run(["git", "commit", "-m", f"Add post: {metadata['title']}"])
     run(["git", "push", "origin", branch])
 
-    # Open PR
+    # Step 3: Open PR
     pr_body = (
         f"Auto-converted from `{raw_file}` using Claude.\n\n"
         f"**Title:** {metadata['title']}\n"
@@ -186,21 +202,7 @@ def process_new_file(raw_file: str, base_branch: str, today: str) -> None:
          "--base", base_branch,
          "--head", branch])
 
-    # Back on base branch — write branch reference into raw file
     run(["git", "checkout", base_branch])
-
-    if path.suffix == ".txt":
-        # Rename .txt → .md so future edits can carry frontmatter
-        md_path = path.with_suffix(".md")
-        md_path.write_text(add_frontmatter_field(content, "branch", branch), encoding="utf-8")
-        path.unlink()
-        run(["git", "add", str(md_path), raw_file])
-    else:
-        path.write_text(add_frontmatter_field(content, "branch", branch), encoding="utf-8")
-        run(["git", "add", raw_file])
-
-    run(["git", "commit", "-m", f"Store branch reference in raw file [skip ci]"])
-    run(["git", "push"])
     print(f"  Done — branch: {branch}")
 
 
