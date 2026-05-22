@@ -177,5 +177,44 @@ a h2{
 background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif;
 }
 ul.posts {
-list-style-image: url('../img/code.png');"
+    list-style: none;
+    padding-left: 1.8em;
+}
+ul.posts li {
+    position: relative;
+    padding-left: 0.4em;
+    margin-bottom: 4px;
+}
+ul.posts li::before {
+    content: '';
+    position: absolute;
+    left: -1.8em;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 15px;
+    background-image: url('../passing-thoughts-logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.box ul {
+    list-style: none;
+    padding-left: 1.8em;
+}
+.box ul li {
+    position: relative;
+    padding-left: 0.4em;
+    margin-bottom: 4px;
+}
+.box ul li::before {
+    content: '';
+    position: absolute;
+    left: -1.8em;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 15px;
+    background-image: url('../passing-thoughts-logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
