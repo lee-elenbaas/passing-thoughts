@@ -59,18 +59,26 @@ def insert_frontmatter_field(file_path: str, key: str, value) -> None:
     Path(file_path).write_text(updated, encoding="utf-8")
 
 
-def get_excerpt(body: str, max_chars: int = 280) -> str:
-    paragraphs = [p.strip() for p in body.split("\n\n") if p.strip()]
-    if not paragraphs:
-        return ""
-    excerpt = paragraphs[0]
-    excerpt = re.sub(r"[*_`#]", "", excerpt)
-    excerpt = re.sub(r"\[([^\]]+)\]\([^\)]+\)", r"\1", excerpt)
-    excerpt = re.sub(r"<[^>]+>", "", excerpt)
-    excerpt = " ".join(excerpt.split())
-    if len(excerpt) > max_chars:
-        excerpt = excerpt[:max_chars].rsplit(" ", 1)[0] + "…"
-    return excerpt
+def clean_markdown(text: str) -> str:
+    text = re.sub(r"[*_`#]", "", text)
+    text = re.sub(r"\[([^\]]+)\]\([^\)]+\)", r"\1", text)
+    text = re.sub(r"<[^>]+>", "", text)
+    return text.strip()
+
+
+def get_body_text(body: str, max_chars: int = 1500) -> tuple[str, bool]:
+    """Returns (cleaned_text, truncated). Preserves paragraph breaks."""
+    cleaned = clean_markdown(body)
+    if len(cleaned) <= max_chars:
+        return cleaned, False
+    # Truncate at the last paragraph break before max_chars
+    cut = cleaned[:max_chars]
+    last_break = cut.rfind("\n\n")
+    if last_break > max_chars // 2:
+        cut = cut[:last_break]
+    else:
+        cut = cut.rsplit(" ", 1)[0]
+    return cut.rstrip() + "…", True
 
 
 def build_url(filename: str) -> str:
@@ -82,12 +90,15 @@ def build_url(filename: str) -> str:
     return f"{SITE_URL}/{year}/{month}/{day}/{slug}/"
 
 
-def build_text(title: str, url: str, excerpt: str) -> str:
+def build_message(title: str, url: str, body: str, truncated: bool) -> dict:
     text = f"<b>{title}</b>"
-    if excerpt:
-        text += f"\n\n{excerpt}"
-    text += f'\n\n<a href="{url}">Read more</a>'
-    return text
+    if body:
+        text += f"\n\n{body}"
+    link_label = "Continue reading ➜" if truncated else "Read on blog ➜"
+    return {
+        "text": text,
+        "reply_markup": {"inline_keyboard": [[{"text": link_label, "url": url}]]},
+    }
 
 
 def telegram(method: str, payload: dict) -> dict:
@@ -129,13 +140,14 @@ def handle_new_post(post_file: str) -> None:
     meta, body = parse_frontmatter(content)
     title = meta.get("title", path.stem.replace("-", " ").title())
     url = build_url(post_file)
-    text = build_text(title, url, get_excerpt(body))
+    body_text, truncated = get_body_text(body)
+    msg = build_message(title, url, body_text, truncated)
 
     result = telegram("sendMessage", {
         "chat_id": CHANNEL_ID,
-        "text": text,
         "parse_mode": "HTML",
         "link_preview_options": {"is_disabled": True},
+        **msg,
     })
 
     message_id = result["result"]["message_id"]
@@ -161,14 +173,15 @@ def handle_modified_post(post_file: str) -> None:
 
     title = meta.get("title", path.stem.replace("-", " ").title())
     url = build_url(post_file)
-    text = build_text(title, url, get_excerpt(body))
+    body_text, truncated = get_body_text(body)
+    msg = build_message(title, url, body_text, truncated)
 
     telegram("editMessageText", {
         "chat_id": CHANNEL_ID,
         "message_id": int(message_id),
-        "text": text,
         "parse_mode": "HTML",
         "link_preview_options": {"is_disabled": True},
+        **msg,
     })
 
     print(f"  Edited message {message_id}")
