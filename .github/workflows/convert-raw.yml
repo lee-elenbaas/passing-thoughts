@@ -1,0 +1,36 @@
+name: Convert Raw Posts
+
+on:
+  push:
+    branches:
+      - gh-pages
+    paths:
+      - 'raw/*.txt'
+      - 'raw/*.md'
+      - 'raw/*.markdown'
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install anthropic
+
+      - name: Convert raw posts
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BASE_BRANCH: ${{ github.ref_name }}
+        run: python .github/scripts/convert_raw.py

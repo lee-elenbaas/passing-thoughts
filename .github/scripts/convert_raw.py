@@ -1,0 +1,157 @@
+#!/usr/bin/env python3
+import json
+import os
+import re
+import subprocess
+import sys
+from datetime import date
+from pathlib import Path
+
+import anthropic
+
+AUTHOR = "Lee Elenbaas"
+MODEL = "claude-sonnet-4-6"
+
+
+def run(cmd: list[str]) -> str:
+    result = subprocess.run(cmd, capture_output=True, text=True)
+    if result.returncode != 0:
+        print(f"Command failed: {' '.join(cmd)}\n{result.stderr}", file=sys.stderr)
+        raise subprocess.CalledProcessError(result.returncode, cmd, result.stderr)
+    return result.stdout.strip()
+
+
+def get_changed_raw_files() -> list[str]:
+    output = run(["git", "diff", "--name-only", "--diff-filter=AM", "HEAD~1", "HEAD", "--", "raw/*.txt", "raw/*.md", "raw/*.markdown"])
+    return [f for f in output.split("\n") if f]
+
+
+def convert_with_claude(content: str, is_markdown: bool) -> dict:
+    if is_markdown:
+        format_instruction = (
+            "The input is already markdown-formatted. Preserve the existing formatting and structure exactly. "
+            "Only reformat the body if it has obvious issues (e.g. missing stanza breaks in a poem)."
+        )
+    else:
+        format_instruction = (
+            "The input is plain text. Format the body as clean markdown. "
+            "For poems, preserve intentional line breaks using blank lines between stanzas; use <br> for line breaks within a stanza."
+        )
+
+    client = anthropic.Anthropic()
+    response = client.messages.create(
+        model=MODEL,
+        max_tokens=2048,
+        messages=[{
+            "role": "user",
+            "content": f"""You are helping convert raw text into a Jekyll blog post for a personal blog called "Passing Thoughts" by Lee Elenbaas. The blog contains poems, personal reflections, and tech thoughts. Posts can be in Hebrew or English.
+
+{format_instruction}
+
+Return a JSON object with these fields:
+- "title": a suitable title for the post (use existing title if one is present in the content)
+- "slug": URL-safe, lowercase, English-only, hyphenated (max 50 chars — transliterate Hebrew if needed)
+- "category": one word, choose the best fit: "poem", "thought", "story", or "tech"
+- "tags": array of 2-4 lowercase hyphenated tags
+- "body": the post body as markdown, WITHOUT any Jekyll frontmatter block
+
+Return ONLY valid JSON. No markdown code fences, no explanation, no other text.
+
+Input:
+{content}""",
+        }],
+    )
+    text = response.content[0].text.strip()
+    # Strip markdown code fences if Claude wraps the JSON anyway
+    text = re.sub(r"^```(?:json)?\n?", "", text)
+    text = re.sub(r"\n?```$", "", text)
+    return json.loads(text)
+
+
+def setup_git() -> None:
+    run(["git", "config", "user.name", "github-actions[bot]"])
+    run(["git", "config", "user.email", "github-actions[bot]@users.noreply.github.com"])
+
+
+def main() -> None:
+    raw_files = get_changed_raw_files()
+    if not raw_files:
+        print("No changed files found in raw/")
+        return
+
+    base_branch = os.environ.get("BASE_BRANCH", "gh-pages")
+    today = date.today().strftime("%Y-%m-%d")
+    setup_git()
+
+    for txt_file in raw_files:
+        print(f"\nProcessing: {txt_file}")
+        path = Path(txt_file)
+
+        if not path.exists():
+            print("  Skipping — file not found (may already be processed)")
+            continue
+
+        content = path.read_text(encoding="utf-8")
+        if not content.strip():
+            print("  Skipping — empty file")
+            continue
+
+        is_markdown = path.suffix in {".md", ".markdown"}
+        try:
+            metadata = convert_with_claude(content, is_markdown)
+        except (json.JSONDecodeError, KeyError) as e:
+            print(f"  Error parsing Claude response: {e}", file=sys.stderr)
+            continue
+
+        slug = metadata["slug"]
+        title = metadata["title"]
+        category = metadata["category"]
+        tags = metadata.get("tags", [])
+        body = metadata["body"]
+
+        branch = f"post/{today}-{slug}"
+        post_path = Path(f"_posts/{today}-{slug}.md")
+
+        run(["git", "checkout", "-b", branch])
+
+        tags_yaml = "[" + ", ".join(tags) + "]" if tags else "[]"
+        post_content = f"""---
+layout: post
+title: "{title}"
+category: {category}
+tags: {tags_yaml}
+author: {AUTHOR}
+published: true
+---
+{body}
+"""
+        post_path.write_text(post_content, encoding="utf-8")
+        path.unlink()
+
+        run(["git", "add", str(post_path), txt_file])
+        run(["git", "commit", "-m", f"Add post: {title}"])
+        run(["git", "push", "origin", branch])
+
+        pr_body = (
+            f"Auto-converted from `{txt_file}` using Claude.\n\n"
+            f"**Title:** {title}\n"
+            f"**Category:** {category}\n"
+            f"**Tags:** {', '.join(tags)}\n\n"
+            f"Review `{post_path}` and merge when ready."
+        )
+
+        run([
+            "gh", "pr", "create",
+            "--title", f"New post: {title}",
+            "--body", pr_body,
+            "--base", base_branch,
+            "--head", branch,
+        ])
+
+        print(f"  PR created for: {title}")
+
+        run(["git", "checkout", base_branch])
+
+
+if __name__ == "__main__":
+    main()
