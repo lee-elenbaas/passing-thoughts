@@ -25,6 +25,21 @@ def get_posts(diff_filter: str) -> list[str]:
     ]
 
 
+def get_recent_posts(hours: int = 48) -> list[str]:
+    output = run([
+        "git", "-c", "core.quotePath=false",
+        "log", "--name-only", "--format=", "--diff-filter=AM", "--no-merges",
+        f"--since={hours} hours ago", "--", "_posts/",
+    ])
+    seen = set()
+    result = []
+    for f in output.split("\n"):
+        if f and f not in seen and Path(f).parent.name == "_posts" and Path(f).suffix in POST_EXTENSIONS:
+            seen.add(f)
+            result.append(f)
+    return result
+
+
 def parse_frontmatter(content: str) -> tuple[dict, str]:
     if not content.startswith("---"):
         return {}, content
@@ -160,29 +175,46 @@ def handle_modified_post(post_file: str) -> None:
 
 
 def main() -> None:
-    new_posts = get_posts("A")
-    modified_posts = get_posts("M")
-
-    if not new_posts and not modified_posts:
-        print("No new or modified posts found")
-        return
-
-    setup_git()
+    manual = os.environ.get("EVENT_NAME") == "workflow_dispatch"
     failed = []
 
-    for post_file in new_posts:
-        try:
-            handle_new_post(post_file)
-        except Exception as e:
-            print(f"  FAILED: {e}", file=sys.stderr)
-            failed.append(post_file)
-
-    for post_file in modified_posts:
-        try:
-            handle_modified_post(post_file)
-        except Exception as e:
-            print(f"  FAILED: {e}", file=sys.stderr)
-            failed.append(post_file)
+    if manual:
+        print("Manual trigger — processing posts from the last 48 hours")
+        posts = get_recent_posts(48)
+        if not posts:
+            print("No posts found in the last 48 hours")
+            return
+        setup_git()
+        for post_file in posts:
+            try:
+                content = Path(post_file).read_text(encoding="utf-8")
+                meta, _ = parse_frontmatter(content)
+                if meta.get("telegram_message_id"):
+                    handle_modified_post(post_file)
+                else:
+                    handle_new_post(post_file)
+            except Exception as e:
+                print(f"  FAILED ({post_file}): {e}", file=sys.stderr)
+                failed.append(post_file)
+    else:
+        new_posts = get_posts("A")
+        modified_posts = get_posts("M")
+        if not new_posts and not modified_posts:
+            print("No new or modified posts found")
+            return
+        setup_git()
+        for post_file in new_posts:
+            try:
+                handle_new_post(post_file)
+            except Exception as e:
+                print(f"  FAILED: {e}", file=sys.stderr)
+                failed.append(post_file)
+        for post_file in modified_posts:
+            try:
+                handle_modified_post(post_file)
+            except Exception as e:
+                print(f"  FAILED: {e}", file=sys.stderr)
+                failed.append(post_file)
 
     if failed:
         print(f"\nFailed: {failed}", file=sys.stderr)
