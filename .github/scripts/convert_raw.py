@@ -41,12 +41,12 @@ def convert_with_claude(content: str, is_markdown: bool) -> dict:
     if is_markdown:
         format_instruction = (
             "The input is already markdown-formatted. Preserve the existing formatting and structure exactly. "
-            "Only reformat the body if it has obvious issues (e.g. missing stanza breaks in a poem)."
+            "Only reformat the body if it has obvious issues. Do not use <br> tags — use blank lines between lines instead."
         )
     else:
         format_instruction = (
             "The input is plain text. Format the body as clean markdown. "
-            "For poems, preserve intentional line breaks using blank lines between stanzas; use <br> for line breaks within a stanza."
+            "For poems, separate every line with a blank line — do not use <br> tags."
         )
 
     client = anthropic.Anthropic()
