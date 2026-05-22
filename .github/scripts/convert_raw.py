@@ -26,7 +26,7 @@ def run(cmd: list[str]) -> str:
 
 
 def get_changed_raw_files() -> list[str]:
-    output = run(["git", "diff", "--name-only", "--diff-filter=AM", "HEAD~1", "HEAD"])
+    output = run(["git", "-c", "core.quotePath=false", "diff", "--name-only", "--diff-filter=AM", "HEAD~1", "HEAD"])
     all_files = [f for f in output.split("\n") if f]
     raw_files = [
         f for f in all_files
