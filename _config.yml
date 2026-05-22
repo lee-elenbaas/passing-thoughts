@@ -16,6 +16,8 @@ author: "Lee Elenbaas"
 # Gems
 gems: [jekyll-paginate]
 
+exclude: [raw]
+
 # Build settings
 markdown: kramdown
 paginate: 5
