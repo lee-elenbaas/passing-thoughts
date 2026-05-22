@@ -1,0 +1,53 @@
+name: Auto-merge post edits to gh-pages
+
+on:
+  push:
+    branches:
+      - drafts
+    paths:
+      - '_posts/**'
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: drafts
+          fetch-depth: 2
+
+      - name: Merge post changes into gh-pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          CHANGED=$(git -c core.quotePath=false diff --name-only HEAD~1 HEAD -- '_posts/')
+          echo "Changed posts: $CHANGED"
+
+          if [ -z "$CHANGED" ]; then
+            echo "No _posts/ changes — nothing to do"
+            exit 0
+          fi
+
+          git fetch origin gh-pages
+          git checkout gh-pages
+
+          while IFS= read -r f; do
+            git checkout drafts -- "$f"
+          done <<< "$CHANGED"
+
+          git add _posts/
+
+          if git diff --cached --quiet; then
+            echo "Nothing to commit"
+            exit 0
+          fi
+
+          git commit -m "Auto-merge post edits from drafts [skip ci]"
+          git push origin gh-pages
