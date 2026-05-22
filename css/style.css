@@ -117,7 +117,8 @@ img {
     background-position: 50% 50%;
     vertical-align: middle;
 }
-.ltr .title-image {
+.ltr .title-image,
+.rtl .title-image {
     transform: scaleX(-1);
 }
 .seeds .title-image {
@@ -222,6 +223,7 @@ ul.posts li::before {
     background-repeat: no-repeat;
 }
 .ltr .box ul li::before,
+.rtl .box ul li::before,
 ul.posts li::before {
     transform: translateY(-50%) scaleX(-1);
 }
