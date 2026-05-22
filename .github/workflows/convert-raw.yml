@@ -5,9 +5,7 @@ on:
     branches:
       - gh-pages
     paths:
-      - 'raw/*.txt'
-      - 'raw/*.md'
-      - 'raw/*.markdown'
+      - 'raw/**'
 
 jobs:
   convert:

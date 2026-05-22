@@ -25,16 +25,42 @@ def run(cmd: list[str]) -> str:
     return result.stdout.strip()
 
 
-def get_changed_raw_files() -> list[str]:
-    output = run(["git", "diff", "--name-only", "--diff-filter=AM", "HEAD~1", "HEAD"])
+def get_raw_files(diff_filter: str) -> list[str]:
+    output = run([
+        "git", "-c", "core.quotePath=false",
+        "diff", "--name-only", f"--diff-filter={diff_filter}", "HEAD~1", "HEAD",
+    ])
     all_files = [f for f in output.split("\n") if f]
-    raw_files = [
+    result = [
         f for f in all_files
         if Path(f).parent.name == "raw" and Path(f).suffix in RAW_EXTENSIONS
     ]
-    print(f"Changed files: {all_files}")
-    print(f"Raw files to process: {raw_files}")
-    return raw_files
+    print(f"  All changed: {all_files}")
+    print(f"  Raw files ({diff_filter}): {result}")
+    return result
+
+
+def parse_frontmatter(content: str) -> tuple[dict, str]:
+    if not content.startswith("---"):
+        return {}, content
+    end = content.index("---", 3)
+    meta = {}
+    for line in content[3:end].strip().splitlines():
+        if ":" in line:
+            key, _, val = line.partition(":")
+            meta[key.strip()] = val.strip().strip('"')
+    return meta, content[end + 3:].strip()
+
+
+def add_frontmatter_field(content: str, key: str, value: str) -> str:
+    if content.startswith("---"):
+        end = content.index("---", 3)
+        return content[:end] + f"{key}: {value}\n" + content[end:]
+    return f"---\n{key}: {value}\n---\n{content}"
+
+
+def post_path_from_branch(branch: str) -> Path:
+    return Path(f"_posts/{branch.removeprefix('post/')}.md")
 
 
 def convert_with_claude(content: str, is_markdown: bool) -> dict:
@@ -79,18 +105,38 @@ Input:
     return json.loads(text)
 
 
+def build_post_content(metadata: dict) -> str:
+    tags_yaml = "[" + ", ".join(metadata.get("tags", [])) + "]"
+    return (
+        f"---\n"
+        f"layout: post\n"
+        f"title: \"{metadata['title']}\"\n"
+        f"category: {metadata['category']}\n"
+        f"tags: {tags_yaml}\n"
+        f"author: {AUTHOR}\n"
+        f"direction: {metadata.get('direction', 'ltr')}\n"
+        f"published: true\n"
+        f"---\n"
+        f"{metadata['body']}\n"
+    )
+
+
 def setup_git() -> None:
     run(["git", "config", "user.name", "github-actions[bot]"])
     run(["git", "config", "user.email", "github-actions[bot]@users.noreply.github.com"])
 
 
-def process_file(txt_file: str, base_branch: str, today: str) -> None:
-    print(f"\nProcessing: {txt_file}")
-    path = Path(txt_file)
+def branch_exists_on_remote(branch: str) -> bool:
+    result = subprocess.run(
+        ["git", "ls-remote", "--heads", "origin", branch],
+        capture_output=True, text=True,
+    )
+    return bool(result.stdout.strip())
 
-    if not path.exists():
-        print("  Skipping — file not found")
-        return
+
+def process_new_file(raw_file: str, base_branch: str, today: str) -> None:
+    print(f"\nNew file: {raw_file}")
+    path = Path(raw_file)
 
     content = path.read_text(encoding="utf-8")
     if not content.strip():
@@ -98,65 +144,96 @@ def process_file(txt_file: str, base_branch: str, today: str) -> None:
         return
 
     is_markdown = path.suffix in {".md", ".markdown"}
+    _, body = parse_frontmatter(content)
+    raw_body = body if is_markdown else content
+
     print("  Calling Claude...")
-    metadata = convert_with_claude(content, is_markdown)
-    print(f"  Claude response: {json.dumps({k: v for k, v in metadata.items() if k != 'body'})}")
+    metadata = convert_with_claude(raw_body, is_markdown)
+    print(f"  Metadata: {json.dumps({k: v for k, v in metadata.items() if k != 'body'})}")
 
-    slug = metadata["slug"]
-    title = metadata["title"]
-    category = metadata["category"]
-    tags = metadata.get("tags", [])
-    direction = metadata.get("direction", "ltr")
-    body = metadata["body"]
+    branch = f"post/{today}-{metadata['slug']}"
+    post_path = post_path_from_branch(branch)
 
-    branch = f"post/{today}-{slug}"
-    post_path = Path(f"_posts/{today}-{slug}.md")
-
+    # Create branch, write post, remove raw file, push
     run(["git", "checkout", "-b", branch])
-
-    tags_yaml = "[" + ", ".join(tags) + "]" if tags else "[]"
-    post_content = f"""---
-layout: post
-title: "{title}"
-category: {category}
-tags: {tags_yaml}
-author: {AUTHOR}
-direction: {direction}
-published: true
----
-{body}
-"""
-    post_path.write_text(post_content, encoding="utf-8")
+    post_path.write_text(build_post_content(metadata), encoding="utf-8")
     path.unlink()
-
-    run(["git", "add", str(post_path), txt_file])
-    run(["git", "commit", "-m", f"Add post: {title}"])
+    run(["git", "add", str(post_path), raw_file])
+    run(["git", "commit", "-m", f"Add post: {metadata['title']}"])
     run(["git", "push", "origin", branch])
 
+    # Open PR
     pr_body = (
-        f"Auto-converted from `{txt_file}` using Claude.\n\n"
-        f"**Title:** {title}\n"
-        f"**Category:** {category}\n"
-        f"**Tags:** {', '.join(tags)}\n\n"
+        f"Auto-converted from `{raw_file}` using Claude.\n\n"
+        f"**Title:** {metadata['title']}\n"
+        f"**Category:** {metadata['category']}\n"
+        f"**Tags:** {', '.join(metadata.get('tags', []))}\n\n"
         f"Review `{post_path}` and merge when ready."
     )
+    run(["gh", "pr", "create",
+         "--title", f"New post: {metadata['title']}",
+         "--body", pr_body,
+         "--base", base_branch,
+         "--head", branch])
 
-    run([
-        "gh", "pr", "create",
-        "--title", f"New post: {title}",
-        "--body", pr_body,
-        "--base", base_branch,
-        "--head", branch,
-    ])
-
-    print(f"  PR created for: {title}")
+    # Back on base branch — write branch reference into raw file
     run(["git", "checkout", base_branch])
+
+    if path.suffix == ".txt":
+        # Rename .txt → .md so future edits can carry frontmatter
+        md_path = path.with_suffix(".md")
+        md_path.write_text(add_frontmatter_field(content, "branch", branch), encoding="utf-8")
+        path.unlink()
+        run(["git", "add", str(md_path), raw_file])
+    else:
+        path.write_text(add_frontmatter_field(content, "branch", branch), encoding="utf-8")
+        run(["git", "add", raw_file])
+
+    run(["git", "commit", "-m", f"Store branch reference in raw file [skip ci]"])
+    run(["git", "push"])
+    print(f"  Done — branch: {branch}")
+
+
+def process_modified_file(raw_file: str, base_branch: str) -> None:
+    print(f"\nModified file: {raw_file}")
+    path = Path(raw_file)
+
+    content = path.read_text(encoding="utf-8")
+    meta, body = parse_frontmatter(content)
+    branch = meta.get("branch")
+
+    if not branch:
+        print("  No branch in frontmatter — not yet converted, skipping")
+        return
+
+    if not branch_exists_on_remote(branch):
+        print(f"  Branch {branch} not found — PR may already be merged")
+        return
+
+    is_markdown = path.suffix in {".md", ".markdown"}
+    print("  Calling Claude...")
+    metadata = convert_with_claude(body, is_markdown)
+    print(f"  Metadata: {json.dumps({k: v for k, v in metadata.items() if k != 'body'})}")
+
+    post_path = post_path_from_branch(branch)
+
+    run(["git", "fetch", "origin", branch])
+    run(["git", "checkout", branch])
+    post_path.write_text(build_post_content(metadata), encoding="utf-8")
+    run(["git", "add", str(post_path)])
+    run(["git", "commit", "-m", f"Update post: {metadata['title']}"])
+    run(["git", "push", "origin", branch])
+
+    run(["git", "checkout", base_branch])
+    print(f"  Updated branch: {branch}")
 
 
 def main() -> None:
-    raw_files = get_changed_raw_files()
-    if not raw_files:
-        print("No new raw files found — nothing to do.")
+    new_files = get_raw_files("A")
+    modified_files = get_raw_files("M")
+
+    if not new_files and not modified_files:
+        print("No new or modified raw files — nothing to do.")
         return
 
     base_branch = os.environ.get("BASE_BRANCH", "gh-pages")
@@ -164,16 +241,25 @@ def main() -> None:
     setup_git()
 
     failed = []
-    for f in raw_files:
+
+    for f in new_files:
         try:
-            process_file(f, base_branch, today)
+            process_new_file(f, base_branch, today)
         except Exception as e:
-            print(f"  FAILED: {e}", file=sys.stderr)
+            print(f"  FAILED ({f}): {e}", file=sys.stderr)
             failed.append(f)
-            run(["git", "checkout", base_branch])
+            subprocess.run(["git", "checkout", base_branch], capture_output=True)
+
+    for f in modified_files:
+        try:
+            process_modified_file(f, base_branch)
+        except Exception as e:
+            print(f"  FAILED ({f}): {e}", file=sys.stderr)
+            failed.append(f)
+            subprocess.run(["git", "checkout", base_branch], capture_output=True)
 
     if failed:
-        print(f"\nFailed to process: {failed}", file=sys.stderr)
+        print(f"\nFailed: {failed}", file=sys.stderr)
         sys.exit(1)
 
 
