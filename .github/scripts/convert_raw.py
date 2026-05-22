@@ -53,6 +53,7 @@ Return a JSON object with these fields:
 - "slug": URL-safe, lowercase, English-only, hyphenated (max 50 chars — transliterate Hebrew if needed)
 - "category": one word, choose the best fit: "poem", "thought", "story", or "tech"
 - "tags": array of 2-4 lowercase hyphenated tags
+- "direction": "rtl" if the post body is primarily in Hebrew or another right-to-left language, otherwise "ltr"
 - "body": the post body as markdown, WITHOUT any Jekyll frontmatter block
 
 Return ONLY valid JSON. No markdown code fences, no explanation, no other text.
@@ -107,6 +108,7 @@ def main() -> None:
         title = metadata["title"]
         category = metadata["category"]
         tags = metadata.get("tags", [])
+        direction = metadata.get("direction", "ltr")
         body = metadata["body"]
 
         branch = f"post/{today}-{slug}"
@@ -121,6 +123,7 @@ title: "{title}"
 category: {category}
 tags: {tags_yaml}
 author: {AUTHOR}
+direction: {direction}
 published: true
 ---
 {body}
