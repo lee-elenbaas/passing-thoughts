@@ -16,7 +16,7 @@ author: "Lee Elenbaas"
 # Gems
 gems: [jekyll-paginate]
 
-exclude: [raw]
+exclude: [raw, passing-thoughts-logo.xcf]
 
 # Build settings
 markdown: kramdown
