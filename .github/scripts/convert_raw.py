@@ -112,7 +112,9 @@ Input:
     text = response.content[0].text.strip()
     text = re.sub(r"^```(?:json)?\n?", "", text)
     text = re.sub(r"\n?```$", "", text)
-    return json.loads(text)
+    result = json.loads(text)
+    result["body"] = re.sub(r"\n{3,}", "\n\n<br>\n\n", result["body"])
+    return result
 
 
 def build_post_content(metadata: dict) -> str:
