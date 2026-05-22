@@ -1,9 +1,12 @@
 ---
-created: 2026-05-22T10:15:55+03:00
-modified: 2026-05-22T11:09:54+03:00
-branch: post/2026-05-22-morning-resistance
+layout: post
+title: "Morning Resistance"
+category: poem
+tags: [morning, sleep, mood, everyday]
+author: Lee Elenbaas
+direction: ltr
+published: true
 ---
-
 Eyes are glued shut
 Light sips in through the cracks
 Birds sing about a new day
