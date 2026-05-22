@@ -25,6 +25,16 @@ def run(cmd: list[str]) -> str:
     return result.stdout.strip()
 
 
+def get_all_raw_files() -> list[str]:
+    result = [
+        str(p) for p in Path("raw").iterdir()
+        if p.is_file() and p.suffix in RAW_EXTENSIONS
+        and not p.name.startswith(".")
+    ]
+    print(f"  All raw files: {result}")
+    return result
+
+
 def get_raw_files(diff_filter: str) -> list[str]:
     output = run([
         "git", "-c", "core.quotePath=false",
@@ -229,8 +239,15 @@ def process_modified_file(raw_file: str, base_branch: str) -> None:
 
 
 def main() -> None:
-    new_files = get_raw_files("A")
-    modified_files = get_raw_files("M")
+    process_all = os.environ.get("PROCESS_ALL", "false").lower() == "true"
+
+    if process_all:
+        print("Manual trigger — processing all files in raw/")
+        new_files = get_all_raw_files()
+        modified_files = []
+    else:
+        new_files = get_raw_files("A")
+        modified_files = get_raw_files("M")
 
     if not new_files and not modified_files:
         print("No new or modified raw files — nothing to do.")

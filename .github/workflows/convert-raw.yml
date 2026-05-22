@@ -6,6 +6,7 @@ on:
       - drafts
     paths:
       - 'raw/**'
+  workflow_dispatch:
 
 jobs:
   convert:
@@ -34,4 +35,5 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BASE_BRANCH: gh-pages
+          PROCESS_ALL: ${{ github.event_name == 'workflow_dispatch' }}
         run: python .github/scripts/convert_raw.py
