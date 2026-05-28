@@ -6,6 +6,7 @@ tags: [politics, book-review, hebrew, democracy]
 author: Lee Elenbaas
 direction: rtl
 published: true
+telegram_message_id: 7
 ---
 בספר הזה אבי גרינצייג מנסה לבנות את המשטר האידאלי לטעמו
 
