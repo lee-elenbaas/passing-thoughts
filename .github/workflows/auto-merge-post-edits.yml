@@ -49,5 +49,5 @@ jobs:
             exit 0
           fi
 
-          git commit -m "Auto-merge post edits from drafts [skip ci]"
+          git commit -m "Auto-merge post edits from drafts"
           git push origin gh-pages
