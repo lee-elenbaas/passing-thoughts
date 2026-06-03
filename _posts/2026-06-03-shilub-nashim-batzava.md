@@ -1,7 +1,12 @@
 ---
-branch: post/2026-06-03-shilub-nashim-batzava
+layout: post
+title: "שילוב נשים בצבא"
+category: half-baked
+tags: [women, military, technology, society]
+author: Lee Elenbaas
+direction: rtl
+published: true
 ---
-שילוב נשים בצבא
 זה נושא שתופס כותרות לאחרונה
 
 אני שם לב שהרבה זמן מושקע על ידי מתנגדי שילוב נשים בצבא
@@ -17,5 +22,3 @@ branch: post/2026-06-03-shilub-nashim-batzava
 ממנופים ומכונות שזמינים היום לשימוש
 דרך מכונות הנשלטות מרחוק שמאפשרות לפעול בתנאים מסוכנים בלי לסכן את האדם עצמו
 וכלה באבי טיפוס של חליפות ושלדים חיצוניים שעדיים לא נמצאים בשימוש מבצעי - אבל כבר ברור שהם יגיעו לשם במועד עתידי כלשהו
-
-
