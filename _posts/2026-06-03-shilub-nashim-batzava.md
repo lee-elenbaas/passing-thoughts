@@ -6,6 +6,7 @@ tags: [women, military, technology, society]
 author: Lee Elenbaas
 direction: rtl
 published: true
+telegram_message_id: 8
 ---
 זה נושא שתופס כותרות לאחרונה
 
