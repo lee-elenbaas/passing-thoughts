@@ -1,3 +1,6 @@
+---
+branch: post/2026-06-19-hakomedya-hamemshaltit-steinitz
+---
 הקומדיה הממשלתית / יובל שטייניץ
 
 
