@@ -1,9 +1,12 @@
 ---
-branch: post/2026-06-19-hakomedya-hamemshaltit-steinitz
+layout: post
+title: "הקומדיה הממשלתית / יובל שטייניץ"
+category: books
+tags: [politics, israel, review, hebrew]
+author: Lee Elenbaas
+direction: rtl
+published: true
 ---
-הקומדיה הממשלתית / יובל שטייניץ
-
-
 אוטוביאוגרפיה פוליטית של מי שהיה נציג האקדמיה במפלגת השלטון בישראל ומחובר חזר לביבי במשך תקופה לא קטנה
 
 כתוב באופן קליל ומהנה
@@ -19,4 +22,3 @@ branch: post/2026-06-19-hakomedya-hamemshaltit-steinitz
 בעיות שרובן ככולן מופיעות שוב ושוב בהיסטוריה הישראלית
 
 ולפעמים אפילו מתפוצצות לכולנו בפרצוף
-
