@@ -6,6 +6,7 @@ tags: [books, hebrew, humor, humanity]
 author: Lee Elenbaas
 direction: rtl
 published: true
+telegram_message_id: 10
 ---
 מדריך משעשע למהי אנושיות ואיך היא הגיע להיכן שהיא נמצאת היום
 
