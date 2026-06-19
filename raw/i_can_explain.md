@@ -1,3 +1,6 @@
+---
+branch: post/2026-06-19-ani-yachol-lehasber-doron-fishler
+---
 אני יכול להסביר / דורון פישלר
 
 
