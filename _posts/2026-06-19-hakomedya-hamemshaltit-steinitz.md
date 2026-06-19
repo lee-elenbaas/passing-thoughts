@@ -6,6 +6,7 @@ tags: [politics, israel, review, hebrew]
 author: Lee Elenbaas
 direction: rtl
 published: true
+telegram_message_id: 9
 ---
 אוטוביאוגרפיה פוליטית של מי שהיה נציג האקדמיה במפלגת השלטון בישראל ומחובר חזר לביבי במשך תקופה לא קטנה
 
