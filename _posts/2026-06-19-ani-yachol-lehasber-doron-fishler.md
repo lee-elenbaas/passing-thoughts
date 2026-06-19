@@ -1,9 +1,12 @@
 ---
-branch: post/2026-06-19-ani-yachol-lehasber-doron-fishler
+layout: post
+title: "אני יכול להסביר / דורון פישלר"
+category: review
+tags: [books, hebrew, humor, humanity]
+author: Lee Elenbaas
+direction: rtl
+published: true
 ---
-אני יכול להסביר / דורון פישלר
-
-
 מדריך משעשע למהי אנושיות ואיך היא הגיע להיכן שהיא נמצאת היום
 
 זו לא סקירה היסטורית אלה נושאית - המדברת על נושאים מרכזיים בחוויה האנושית
@@ -11,4 +14,3 @@ branch: post/2026-06-19-ani-yachol-lehasber-doron-fishler
 בכמה וכמה נושאים מצאתי את עצמי מתפעל מהניסוח המשעשע ומחודד של נקודות שקשה להבהיר
 
 כיף גדול
-
