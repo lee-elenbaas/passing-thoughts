@@ -7,7 +7,7 @@ import sys
 import urllib.request
 from pathlib import Path
 
-SITE_URL = "https://passing-thoughts.lee-elenbaas.github.io"
+SITE_URL = "https://passing-thoughts.elenbaas.org.il"
 BOT_TOKEN = os.environ["TELEGRAM_BOT_TOKEN"]
 CHANNEL_ID = os.environ["TELEGRAM_CHANNEL_ID"]
 POST_EXTENSIONS = {".md", ".markdown"}
