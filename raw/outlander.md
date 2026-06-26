@@ -1,3 +1,6 @@
+---
+branch: post/2026-06-26-outlander-diana-gabaldon
+---
 נוכריה / דיאנה גבלדון
 
 
