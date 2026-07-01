@@ -6,6 +6,7 @@ tags: [books, historical-fiction, scotland, time-travel]
 author: Lee Elenbaas
 direction: rtl
 published: true
+telegram_message_id: 11
 ---
 מאנגלית outlander / Diana Gabaldon
 
