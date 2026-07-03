@@ -1,5 +1,6 @@
 import csv
 import logging
+import argparse
 # ייבוא האלגוריתם הטהור מהקובץ הראשון
 from protest_voting_algorithm import calculate_elections
 
@@ -43,10 +44,7 @@ def write_results_to_csv(filename, results):
                 
                 writer.writerow([name, party['orig_votes'], party['seats'], status])
 
-def main():
-    input_file = 'elections_data_2022.csv'
-    output_file = 'elections_results_2022.csv'
-    
+def main(input_file, output_file):
     try:
         # 1. טעינת הנתונים מקובץ ה-CSV
         print(f"טוען נתונים מתוך הקובץ: {input_file}...")
@@ -64,8 +62,19 @@ def main():
         
     except FileNotFoundError:
         print(f"\nשגיאה: לא ניתן למצוא את קובץ הקלט '{input_file}'.")
-        print("אנא ודא שהקובץ קיים באותה תיקייה ומכיל את הכותרות: שם המפלגה, קולות מקוריים, רשימת גיבוי.")
+        print("אנא ודא שהקובץ קיים בנתיב המבוקש ומכיל את הכותרות: שם המפלגה, קולות מקוריים, רשימת גיבוי.")
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description="הרצת אלגוריתם הצבעות מחאה לדוגמה.")
+    parser.add_argument("input_file", nargs="?", default=None, help="קובץ נתוני הקלט (ברירת מחדל: elections_data_2022.csv)")
+    parser.add_argument("output_file", nargs="?", default=None, help="קובץ תוצאות המנדטים (ברירת מחדל: elections_results_2022.csv)")
+    parser.add_argument("-i", "--input", default=None, help="קובץ נתוני הקלט (חלופה לארגומנט מיקומי)")
+    parser.add_argument("-o", "--output", default=None, help="קובץ תוצאות המנדטים (חלופה לארגומנט מיקומי)")
+    
+    args = parser.parse_args()
+    
+    input_file = args.input or args.input_file or 'elections_data_2022.csv'
+    output_file = args.output or args.output_file or 'elections_results_2022.csv'
+    
+    main(input_file, output_file)
 
