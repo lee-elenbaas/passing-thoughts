@@ -1,3 +1,12 @@
+---
+layout: post
+title: "הצבעות מחאה"
+category: politics
+tags: [politics, idea]
+author: Lee Elenbaas
+direction: rtl
+published: true
+---
 
 **הצבעתם מחאה בפתק לבן? מזל טוב, עזרתם למפלגות הגדולות.** 🗳️❌
 
@@ -14,4 +23,5 @@
 רוצים לראות איך הכנסת הייתה נראית? כל הנתונים, הנוסחאות והטבלאות בקישור:
 
 * [תיאור מלא של ההצעה](/protest-voting/ייצוג להצבעות מחאה.odt)
-* [נתוני הבחירות הקודמות לפי ההצעה](/protest-voting/השוואת תוצאות בחירות קודמות.ods)
+* [נתוני הבחירות הקודמות לפי ההצעה](/protest-voting/Protest_Voting_vs_Official_Elections_Report.xlsx)
+* [קוד למימוש האלגוריתם כולל נתונים מלשכת הבחירות המרכזית על בחירות קודמות](/protest-voting/protest-voting.tar.gz)
