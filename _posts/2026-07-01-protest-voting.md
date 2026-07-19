@@ -25,3 +25,5 @@ published: true
 * [תיאור מלא של ההצעה](/protest-voting/ייצוג להצבעות מחאה.odt)
 * [נתוני הבחירות הקודמות לפי ההצעה](/protest-voting/Protest_Voting_vs_Official_Elections_Report.xlsx)
 * [קוד למימוש האלגוריתם כולל נתונים מלשכת הבחירות המרכזית על בחירות קודמות](/protest-voting/protest-voting.tar.gz)
+
+שיפרתי את האלגוריתם כדי להתמודד עם שתי נקודות חולשה שהיו בו
