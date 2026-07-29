@@ -20,4 +20,4 @@ telegram_message_id: 13
 
 תמריץ חיובי, שומר על הקופה הציבורית, ומביא תוצאות בשטח.
 
-[נוסח מלא](/diversity-funding/הצעת חוק מימון מפלגות (תיקון – תמריץ לייצוג דמוגרפי מגוון), התשפ_ו–2026.odt)
+[נוסח מלא](/diversity-funding/diversity-funding-proposal.odt)
