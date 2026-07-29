@@ -6,6 +6,7 @@ tags: [politics, knesset, diversity, policy]
 author: Lee Elenbaas
 direction: rtl
 published: true
+telegram_message_id: 13
 ---
 במקום לחייב מפלגות בחוק – גורמים להן לרדוף אחרי גיוון:
 
