@@ -250,7 +250,7 @@ def main() -> None:
         new_files = get_all_raw_files()
         modified_files = []
     else:
-        new_files = get_raw_files("A")
+        new_files = get_raw_files("AR")
         modified_files = get_raw_files("M")
 
     if not new_files and not modified_files:
