@@ -146,7 +146,7 @@ def branch_exists_on_remote(branch: str) -> bool:
     return bool(result.stdout.strip())
 
 
-def process_new_file(raw_file: str, base_branch: str, today: str) -> None:
+def process_new_file(raw_file: str, base_branch: str, today: str, source_branch: str) -> None:
     print(f"\nNew file: {raw_file}")
     path = Path(raw_file)
 
@@ -204,11 +204,11 @@ def process_new_file(raw_file: str, base_branch: str, today: str) -> None:
          "--base", base_branch,
          "--head", branch])
 
-    run(["git", "checkout", base_branch])
+    run(["git", "checkout", source_branch])
     print(f"  Done — branch: {branch}")
 
 
-def process_modified_file(raw_file: str, base_branch: str) -> None:
+def process_modified_file(raw_file: str, base_branch: str, source_branch: str) -> None:
     print(f"\nModified file: {raw_file}")
     path = Path(raw_file)
 
@@ -238,7 +238,7 @@ def process_modified_file(raw_file: str, base_branch: str) -> None:
     run(["git", "commit", "-m", f"Update post: {metadata['title']}"])
     run(["git", "push", "origin", branch])
 
-    run(["git", "checkout", base_branch])
+    run(["git", "checkout", source_branch])
     print(f"  Updated branch: {branch}")
 
 
@@ -258,6 +258,7 @@ def main() -> None:
         return
 
     base_branch = os.environ.get("BASE_BRANCH", "gh-pages")
+    source_branch = run(["git", "rev-parse", "--abbrev-ref", "HEAD"])
     today = date.today().strftime("%Y-%m-%d")
     setup_git()
 
@@ -265,19 +266,19 @@ def main() -> None:
 
     for f in new_files:
         try:
-            process_new_file(f, base_branch, today)
+            process_new_file(f, base_branch, today, source_branch)
         except Exception as e:
             print(f"  FAILED ({f}): {e}", file=sys.stderr)
             failed.append(f)
-            subprocess.run(["git", "checkout", base_branch], capture_output=True)
+            subprocess.run(["git", "checkout", source_branch], capture_output=True)
 
     for f in modified_files:
         try:
-            process_modified_file(f, base_branch)
+            process_modified_file(f, base_branch, source_branch)
         except Exception as e:
             print(f"  FAILED ({f}): {e}", file=sys.stderr)
             failed.append(f)
-            subprocess.run(["git", "checkout", base_branch], capture_output=True)
+            subprocess.run(["git", "checkout", source_branch], capture_output=True)
 
     if failed:
         print(f"\nFailed: {failed}", file=sys.stderr)
