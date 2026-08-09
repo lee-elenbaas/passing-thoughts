@@ -1,3 +1,6 @@
+---
+branch: post/2026-08-09-kavim-chotsim-gvulot-idit-bar
+---
 קווים חוצים גבולות / עידית בר
 
 
