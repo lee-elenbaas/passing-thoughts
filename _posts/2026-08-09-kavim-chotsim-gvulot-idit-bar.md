@@ -6,6 +6,7 @@ tags: [books, arabic-media, caricature, israel]
 author: Lee Elenbaas
 direction: rtl
 published: true
+telegram_message_id: 15
 ---
 הספר הזה נותן הצצה מסודרת לעולם שכמעט לא מדובר בישראליות — קריקטורות מהתקשורת הערבית למינה
 
