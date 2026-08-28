@@ -6,6 +6,7 @@ tags: [ספרים, פוליטיקה, שיח-ישראלי, חשיבה-כמותי�
 author: Lee Elenbaas
 direction: rtl
 published: true
+telegram_message_id: 16
 ---
 קורא היום אחרי אירועי ה-7 באוקטובר את *מלכוד 67* — מרגיש חסר משמעותי.
 
