@@ -1,3 +1,6 @@
+---
+branch: post/2026-09-02-lama-shehaam-yivchar-et-hashoftim-rotman
+---
 למה שהעם יבחר את השופטים? המדריך לרפורמה / שמחה רוטמן
 
 
