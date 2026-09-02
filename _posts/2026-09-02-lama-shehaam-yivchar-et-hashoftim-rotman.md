@@ -6,6 +6,7 @@ tags: [ספרים, רפורמה-משפטית, פוליטיקה, ישראל]
 author: Lee Elenbaas
 direction: rtl
 published: true
+telegram_message_id: 17
 ---
 ספר כיס בו שמחה רוטמן פורש את משנתו לגבי הצורך ברפורמה המשפטית שהוכרזה על ידי לוין בשנת 2023
 
